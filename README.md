@@ -1,11 +1,11 @@
-# default-repository
+# eslint-config
 
 <!-- automd:badges color=black license codecov provider=shields  -->
 
-[![npm version](https://img.shields.io/npm/v/default-repository?color=black)](https://npmjs.com/package/default-repository)
-[![npm downloads](https://img.shields.io/npm/dm/default-repository?color=black)](https://npmjs.com/package/default-repository)
-[![codecov](https://img.shields.io/codecov/c/gh/HugoRCD/default-repository?color=black)](https://codecov.io/gh/HugoRCD/default-repository)
-[![license](https://img.shields.io/github/license/HugoRCD/default-repository?color=black)](https://github.com/HugoRCD/default-repository/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/eslint-config?color=black)](https://npmjs.com/package/eslint-config)
+[![npm downloads](https://img.shields.io/npm/dm/eslint-config?color=black)](https://npmjs.com/package/eslint-config)
+[![codecov](https://img.shields.io/codecov/c/gh/HugoRCD/eslint-config?color=black)](https://codecov.io/gh/HugoRCD/eslint-config)
+[![license](https://img.shields.io/github/license/HugoRCD/eslint-config?color=black)](https://github.com/HugoRCD/eslint-config/blob/main/LICENSE)
 
 <!-- /automd -->
 
@@ -19,26 +19,26 @@ Install package:
 
 ```sh
 # ✨ Auto-detect
-npx nypm install default-repository
+npx nypm install eslint-config
 
 # npm
-npm install default-repository
+npm install eslint-config
 
 # yarn
-yarn add default-repository
+yarn add eslint-config
 
 # pnpm
-pnpm install default-repository
+pnpm install eslint-config
 
 # bun
-bun install default-repository
+bun install eslint-config
 ```
 
 <!-- /automd -->
 
 ## Development
 
-Before you start, you can use the `./scripts/rename.sh` script to rename all `default-repository` occurrences in the repository to your new repository name.
+Before you start, you can use the `./scripts/rename.sh` script to rename all `eslint-config` occurrences in the repository to your new repository name.
 
 ### Local development
 
@@ -69,11 +69,11 @@ To start contributing, you can follow these steps:
 
 <!-- automd:contributors license=MIT author=HugoRCD-->
 
-Published under the [MIT](https://github.com/HugoRCD/default-repository/blob/main/LICENSE) license.
-Made by [@HugoRCD](https://github.com/HugoRCD) and [community](https://github.com/HugoRCD/default-repository/graphs/contributors) 💛
+Published under the [MIT](https://github.com/HugoRCD/eslint-config/blob/main/LICENSE) license.
+Made by [@HugoRCD](https://github.com/HugoRCD) and [community](https://github.com/HugoRCD/eslint-config/graphs/contributors) 💛
 <br><br>
-<a href="https://github.com/HugoRCD/default-repository/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=HugoRCD/default-repository" />
+<a href="https://github.com/HugoRCD/eslint-config/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=HugoRCD/eslint-config" />
 </a>
 
 <!-- /automd -->
