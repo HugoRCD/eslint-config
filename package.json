@@ -1,0 +1,50 @@
+{
+  "name": "default-repository",
+  "version": "0.0.0",
+  "author": "HugoRCD",
+  "repository": "https://github.com/HugoRCD/default-repository.git",
+  "description": "default repository for HugoRCD",
+  "funding": "https://github.com/sponsors/HugoRCD",
+  "packageManager": "bun@1.0.30",
+  "private": true,
+  "scripts": {
+    "automd": "automd",
+    "prepare": "husky",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "automd": "^0.3.7",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "vitest": "^1.4.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "breaking",
+          "chore",
+          "docs",
+          "feat",
+          "fix",
+          "refactor",
+          "revert",
+          "test",
+          "other"
+        ]
+      ]
+    }
+  }
+}

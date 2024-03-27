@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "github>mockline/renovate-config"
+  ]
+}
