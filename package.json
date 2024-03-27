@@ -2,7 +2,10 @@
   "name": "@hugorcd/eslint-config",
   "version": "0.0.1",
   "author": "HugoRCD",
-  "repository": "https://github.com/HugoRCD/eslint-config.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoRCD/eslint-config.git"
+  },
   "description": "default eslint configuration",
   "funding": "https://github.com/sponsors/HugoRCD",
   "packageManager": "bun@1.0.30",
