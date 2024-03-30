@@ -1,6 +1,6 @@
 {
-  "name": "@hugorcd/eslint-config",
-  "version": "0.0.1",
+  "name": "@hrcd/eslint-config",
+  "version": "0.0.0",
   "author": "HugoRCD",
   "repository": {
     "type": "git",
@@ -8,7 +8,6 @@
   },
   "description": "default eslint configuration",
   "funding": "https://github.com/sponsors/HugoRCD",
-  "packageManager": "bun@1.0.30",
   "main": "index.js",
   "scripts": {
     "automd": "automd",
@@ -16,14 +15,20 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "release": "eslint . && changelogen --release --push"
+  },
+  "dependencies": {
+    "@nuxt/eslint-config": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint-plugin-tailwindcss": "^3.15.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
     "automd": "^0.3.7",
+    "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "vitest": "^1.4.0"
@@ -31,23 +36,7 @@
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "type-enum": [
-        2,
-        "always",
-        [
-          "breaking",
-          "chore",
-          "docs",
-          "feat",
-          "fix",
-          "refactor",
-          "revert",
-          "test",
-          "other"
-        ]
-      ]
-    }
-  }
+    ]
+  },
+  "packageManager": "bun@1.0.30"
 }
