@@ -1,12 +1,12 @@
 {
   "name": "@hrcd/eslint-config",
+  "description": "Personal ESLint configuration",
   "version": "0.0.2",
   "author": "HugoRCD",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HugoRCD/eslint-config.git"
   },
-  "description": "default eslint configuration",
   "funding": "https://github.com/sponsors/HugoRCD",
   "main": "index.js",
   "scripts": {
