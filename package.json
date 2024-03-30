@@ -1,6 +1,6 @@
 {
   "name": "@hrcd/eslint-config",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "author": "HugoRCD",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
-    "release": "eslint . && changelogen --release --push"
+    "release": "changelogen --release --push"
   },
   "dependencies": {
     "@nuxt/eslint-config": "^0.2.0",
