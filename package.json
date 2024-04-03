@@ -27,7 +27,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
     "release": "changelogen --release --push",
-    "build": "unbuild"
+    "build": "unbuild",
+    "dev": "unbuild && eslint ."
   },
   "peerDependencies": {
     "eslint": "^8.57.0"
