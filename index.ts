@@ -160,28 +160,12 @@ const config: ESLint.ConfigData = {
             mode: 'strict'
           }
         ],
+        'max-params': ['warn', 4],
         'keyword-spacing': [
           'error',
           {
             after: true,
-            before: true,
-            overrides: {
-              as: {
-                after: false
-              },
-              static: {
-                after: false
-              },
-              while: {
-                after: true
-              }
-            }
-          }
-        ],
-        'max-statements-per-line': [
-          'error',
-          {
-            max: 1
+            before: true
           }
         ],
         'new-parens': [
@@ -248,9 +232,54 @@ const config: ESLint.ConfigData = {
         ],
         'prefer-object-spread': ['error'],
         'prefer-spread': 'error',
+        'quotes': [
+          'error',
+          'single',
+          {
+            allowTemplateLiterals: true
+          }
+        ],
+        'require-await': 'error',
+        'semi': [
+          'error',
+          'never'
+        ],
+        'semi-spacing': [
+          'error',
+          {
+            after: true,
+            before: false
+          }
+        ],
+        'space-before-blocks': [
+          'error',
+          'always'
+        ],
+        'space-before-function-paren': [
+          'error',
+          {
+            'asyncArrow': 'always',
+            'named': 'never',
+            'anonymous': 'never'
+          }
+        ],
+        'space-in-parens': [
+          'error',
+          'never'
+        ],
+        'yoda': [
+          'error',
+          'never'
+        ],
+        'max-statements-per-line': [
+          'error',
+          {
+            max: 1
+          }
+        ],
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
         '@typescript-eslint/no-duplicate-enum-values': 'error',
-        /*'@typescript-eslint/explicit-function-return-type': 'error',*/
+        '@typescript-eslint/explicit-function-return-type': 'error',
         '@typescript-eslint/default-param-last': 'error',
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-require-imports': 'error',
