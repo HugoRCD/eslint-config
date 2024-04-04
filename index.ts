@@ -27,7 +27,62 @@ const config: ESLint.ConfigData = {
   ignorePatterns: ['**/dist/*', '**/node_modules/*'],
   overrides: [
     {
-      files: ['*.ts', '*.tsx', '*.mts', '*.cts', '*.vue'],
+      files: ['*.vue'],
+      rules: {
+        'no-undef': 'off',
+        'tailwindcss/no-custom-classname': 'off',
+        'tailwindcss/no-unnecessary-arbitrary-value': 'off',
+        'vue/block-order': [
+          'error', {
+            'order': [
+              'script',
+              'template',
+              'style'
+            ]
+          }
+        ],
+        'vue/no-useless-mustaches': [
+          'error', {
+            'ignoreIncludesComment': false,
+            'ignoreStringEscape': false
+          }
+        ],
+        'vue/mustache-interpolation-spacing': ['error', 'always'],
+        'vue/valid-v-for': 'error',
+        'vue/html-closing-bracket-spacing': [
+          'error', {
+            'startTag': 'never',
+            'endTag': 'never',
+            'selfClosingTag': 'always'
+          }
+        ],
+        'vue/no-multi-spaces': 'error',
+        'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+        'vue/multi-word-component-names': 'off',
+        'vue/require-default-prop': 'off',
+        'vue/v-bind-style': [
+          'error', 'shorthand', {
+            sameNameShorthand: 'always'
+          }
+        ],
+        'vue/multiline-html-element-content-newline': [
+          'error', {
+            ignoreWhenEmpty: true,
+            ignores: ['pre', 'textarea'],
+            allowEmptyLines: false
+          }
+        ],
+        'vue/block-lang': ['error', {script: {lang: 'ts'}}],
+        'vue/component-api-style': [
+          'error',
+          ['script-setup']
+        ],
+        'vue/no-ref-object-reactivity-loss': 'warn',
+        'vue/max-attributes-per-line': ['error', {singleline: { max: 5 } }]
+      },
+    },
+    {
+      files: ['*.ts', '*.vue'],
       rules: {
         'import/order': 'error',
         'import/first': 'error',
@@ -48,32 +103,11 @@ const config: ESLint.ConfigData = {
             'flatTernaryExpressions': true
           }
         ],
-        'vue/block-order': [
-          'error',
-          {
-            'order': [
-              [
-                'script',
-                'template'
-              ],
-              'style'
-            ]
-          }
-        ],
-        'tailwindcss/no-custom-classname': 'off',
-        'tailwindcss/no-unnecessary-arbitrary-value': 'off',
-        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-        '@typescript-eslint/no-duplicate-enum-values': 'error',
-        '@typescript-eslint/explicit-function-return-type': 'error',
-        '@typescript-eslint/default-param-last': 'error',
-        '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/no-require-imports': 'error',
-        '@typescript-eslint/no-useless-empty-export': 'error',
-        '@typescript-eslint/prefer-function-type': 'error',
-        '@typescript-eslint/prefer-for-of': 'error',
         'array-bracket-newline': [
           'error',
-          'consistent'
+          {
+            multiline: true
+          }
         ],
         'array-bracket-spacing': [
           'error',
@@ -98,9 +132,7 @@ const config: ESLint.ConfigData = {
           'error',
           '1tbs'
         ],
-        'comma-dangle': [
-          'off',
-        ],
+        'comma-dangle': ['off',],
         'comma-spacing': [
           'error',
           {
@@ -156,9 +188,7 @@ const config: ESLint.ConfigData = {
           'error',
           'always'
         ],
-        'no-dupe-else-if': [
-          'error'
-        ],
+        'no-dupe-else-if': ['error'],
         'no-else-return': [
           'error',
           {
@@ -171,18 +201,10 @@ const config: ESLint.ConfigData = {
             allowEmptyCatch: false
           }
         ],
-        'no-empty-pattern': [
-          'error'
-        ],
-        'no-empty-static-block': [
-          'error'
-        ],
-        'no-eq-null': [
-          'error'
-        ],
-        'no-extra-semi': [
-          'error'
-        ],
+        'no-empty-pattern': ['error'],
+        'no-empty-static-block': ['error'],
+        'no-eq-null': ['error'],
+        'no-extra-semi': ['error'],
         'no-irregular-whitespace': [
           'error',
           {
@@ -192,48 +214,24 @@ const config: ESLint.ConfigData = {
             skipTemplates: true
           }
         ],
-        'no-loop-func': [
-          'error'
-        ],
-        'no-multi-spaces': [
-          'error'
-        ],
+        'no-loop-func': ['error'],
+        'no-multi-spaces': ['error'],
         'no-multiple-empty-lines': [
           'error',
           {
             max: 2
           }
         ],
-        'no-redeclare': [
-          'error'
-        ],
-        'no-unexpected-multiline': [
-          'error'
-        ],
-        'no-unneeded-ternary': [
-          'error'
-        ],
-        'no-unreachable': [
-          'error'
-        ],
-        'no-useless-concat': [
-          'error'
-        ],
-        'no-useless-escape': [
-          'error'
-        ],
-        'no-useless-rename': [
-          'error'
-        ],
-        'no-useless-return': [
-          'error'
-        ],
-        'no-var': [
-          'error'
-        ],
-        'no-whitespace-before-property': [
-          'error'
-        ],
+        'no-redeclare': ['error'],
+        'no-unexpected-multiline': ['error'],
+        'no-unneeded-ternary': ['error'],
+        'no-unreachable': ['error'],
+        'no-useless-concat': ['error'],
+        'no-useless-escape': ['error'],
+        'no-useless-rename': ['error'],
+        'no-useless-return': ['error'],
+        'no-var': ['error'],
+        'no-whitespace-before-property': ['error'],
         'prefer-arrow-callback': [
           'error',
           {
@@ -248,78 +246,18 @@ const config: ESLint.ConfigData = {
             ignoreReadBeforeAssign: false
           }
         ],
-        'prefer-object-spread': [
-          'error'
-        ],
+        'prefer-object-spread': ['error'],
         'prefer-spread': 'error',
-        'quotes': [
-          'error',
-          'single',
-          {
-            allowTemplateLiterals: true
-          }
-        ],
-        'require-await': 'error',
-        'semi': [
-          'error',
-          'never'
-        ],
-        'semi-spacing': [
-          'error',
-          {
-            after: true,
-            before: false
-          }
-        ],
-        'space-before-blocks': [
-          'error',
-          'always'
-        ],
-        'space-before-function-paren': [
-          'error',
-          {
-            anonymous: 'always',
-            asyncArrow: 'always',
-            named: 'never'
-          }
-        ],
-        'space-in-parens': [
-          'error',
-          'never'
-        ],
-        'yoda': [
-          'error',
-          'never'
-        ],
+        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+        '@typescript-eslint/no-duplicate-enum-values': 'error',
+        /*'@typescript-eslint/explicit-function-return-type': 'error',*/
+        '@typescript-eslint/default-param-last': 'error',
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/no-require-imports': 'error',
+        '@typescript-eslint/no-useless-empty-export': 'error',
+        '@typescript-eslint/prefer-function-type': 'error',
+        '@typescript-eslint/prefer-for-of': 'error',
         'no-unused-vars': 'off',
-      },
-    },
-    {
-      files: ['*.vue'],
-      rules: {
-        'no-undef': 'off',
-        'vue/block-order': ['error', {
-          'order': [
-            'script',
-            'template',
-            'style'
-          ]
-        }],
-        'vue/component-api-style': ['error', ['script-setup', 'composition']],
-        'vue/no-useless-mustaches': ['error', {
-          'ignoreIncludesComment': false,
-          'ignoreStringEscape': false
-        }],
-        'vue/valid-v-for': 'error',
-        'vue/component-name-in-template-casing': ['error', 'PascalCase'],
-        'vue/multi-word-component-names': 'off',
-        'vue/require-default-prop': 'off',
-        'vue/max-attributes-per-line': [
-          'warn',
-          {
-            singleline: 5,
-          }
-        ],
       },
     },
     {
