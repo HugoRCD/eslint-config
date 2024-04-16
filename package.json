@@ -36,15 +36,15 @@
   "dependencies": {
     "@eslint/js": "^8.57.0",
     "@rushstack/eslint-patch": "^1.10.2",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-tailwindcss": "^3.15.1",
-    "eslint-plugin-vue": "^9.24.1"
+    "eslint-plugin-vue": "^9.25.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/eslint": "^8.56.9",
     "automd": "^0.3.7",
     "changelogen": "^0.5.5",
