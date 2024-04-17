@@ -23,9 +23,19 @@ const config: ESLint.ConfigData = {
     'plugin:import/errors',
     'eslint:recommended',
   ],
+  env: { node: true },
   plugins: ['@typescript-eslint'],
   ignorePatterns: ['**/dist/*', '**/node_modules/*'],
   overrides: [
+    {
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts', '*.vue'],
+      rules: {
+        // The core 'no-unused-vars' rules (in the eslint:recommended ruleset)
+        // does not work with type definitions.
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
+      },
+    },
     {
       files: ['*.vue'],
       rules: {
@@ -88,6 +98,7 @@ const config: ESLint.ConfigData = {
         'import/first': 'error',
         'import/no-unresolved': 'off',
         'no-console': 'warn',
+        'no-undef': 'off',
         'func-name-matching': 'error',
         'no-empty-function': 'off',
         'eqeqeq': [
@@ -279,7 +290,7 @@ const config: ESLint.ConfigData = {
         ],
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
         '@typescript-eslint/no-duplicate-enum-values': 'error',
-        '@typescript-eslint/explicit-function-return-type': 'error',
+        /*'@typescript-eslint/explicit-function-return-type': 'error',*/
         '@typescript-eslint/default-param-last': 'error',
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-require-imports': 'error',
