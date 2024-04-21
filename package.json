@@ -43,7 +43,7 @@
     "eslint-plugin-vue": "^9.25.0"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.9",
+    "@types/eslint": "^8.56.10",
     "automd": "^0.3.7",
     "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
