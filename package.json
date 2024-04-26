@@ -35,9 +35,12 @@
   },
   "dependencies": {
     "@eslint/js": "^9.1.1",
+    "@nuxt/eslint-plugin": "^0.3.10",
     "@rushstack/eslint-patch": "^1.10.2",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
+    "eslint-config-flat-gitignore": "^0.1.5",
+    "eslint-flat-config-utils": "^0.2.4",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-tailwindcss": "^3.15.1",
     "eslint-plugin-vue": "^9.25.0"
