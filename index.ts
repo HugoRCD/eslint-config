@@ -2,10 +2,12 @@ import type { ResolvableFlatConfig, FlatConfigComposer } from 'eslint-flat-confi
 import { composer } from 'eslint-flat-config-utils'
 import gitignore from 'eslint-config-flat-gitignore'
 import type { ESLintOptions } from "./types";
-import { Linter } from "eslint";
+import type { Linter } from "eslint";
 import nuxt from './src/nuxt'
 import vue from './src/vue'
+import jsdoc from './src/jsdoc'
 import ignores from "./src/ignores";
+import defu from "defu";
 
 export * from './types'
 
@@ -24,25 +26,37 @@ export function defineFlatConfigs(
 const defaultOptions: ESLintOptions = {
   vue: true,
   nuxt: true,
+  features: {
+    tooling: false,
+  },
 }
 
 /**
  * Create an array of ESLint flat configs, based on the given options.
  * Accepts appending user configs as rest arguments from the second argument.
  */
-export function createConfig(options: ESLintOptions = defaultOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.FlatConfig> {
-  const c = composer()
+export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.FlatConfig> {
+  const opts = defu(options, defaultOptions)
 
-  // c.append(gitignore({ strict: false }), ignores())
+  const config = composer()
 
-  if (options.vue) c.append(vue())
-  if (options.nuxt) c.append(nuxt())
+  // c.append(gitignore({ strict: false }))
+  config.append(ignores())
 
-  if (userConfigs.length > 0) {
-    c.append(...userConfigs)
+  if (opts.vue)
+    config.append(vue())
+
+  if (opts.nuxt)
+    config.append(nuxt())
+
+  if (opts.features?.tooling) {
+    config.append(jsdoc())
   }
 
-  return c
+  if (userConfigs.length > 0) {
+    config.append(...userConfigs)
+  }
+
+  return config
 }
 
-export default createConfig
