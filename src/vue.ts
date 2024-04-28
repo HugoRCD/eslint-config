@@ -49,8 +49,6 @@ export default function vue(): Linter.FlatConfig[] {
       rules: {
         ...pluginVue.configs['vue3-recommended'].rules,
         'no-undef': 'off',
-        'tailwindcss/no-custom-classname': 'off',
-        'tailwindcss/no-unnecessary-arbitrary-value': 'off',
         'vue/block-order': [
           'error', {
             'order': [

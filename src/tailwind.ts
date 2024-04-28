@@ -1,19 +1,23 @@
 // @ts-expect-error missing types
- 
 import pluginTailwindcss from 'eslint-plugin-tailwindcss'
 import type { Linter } from 'eslint'
 import * as parserVue from 'vue-eslint-parser'
 
-export default function tailwind(): Linter.FlatConfig[] {
+export default function tailwindcss(): Linter.FlatConfig[] {
   return [
     {
-      name: 'vue/tailwindcss',
-      files: ['**/*.vue',],
+      name: 'tailwindcss',
+      files: ['**/*.vue'],
       languageOptions: {
         parser: parserVue,
+        parserOptions: {
+          ecmaFeatures: {
+            jsx: true,
+          }
+        }
       },
       plugins: {
-        'tailwindcss': pluginTailwindcss
+        tailwindcss: pluginTailwindcss
       },
       rules: {
         'tailwindcss/classnames-order': 'error',

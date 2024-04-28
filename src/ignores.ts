@@ -9,7 +9,6 @@ export default function ignores(): Linter.FlatConfig[] {
         '**/.nuxt',
         '**/.output',
         '**/.vercel',
-        '**/.netlify',
       ],
     },
   ]
