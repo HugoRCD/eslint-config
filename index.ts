@@ -1,13 +1,15 @@
 import type { ResolvableFlatConfig, FlatConfigComposer } from 'eslint-flat-config-utils'
 import { composer } from 'eslint-flat-config-utils'
 import gitignore from 'eslint-config-flat-gitignore'
-import type { ESLintOptions } from "./types";
-import type { Linter } from "eslint";
+import type { ESLintOptions } from './types'
+import type { Linter } from 'eslint'
 import nuxt from './src/nuxt'
 import vue from './src/vue'
+import tailwind from './src/tailwind'
 import jsdoc from './src/jsdoc'
-import ignores from "./src/ignores";
-import defu from "defu";
+import ignores from './src/ignores'
+import typescript from './src/typescript'
+import defu from 'defu'
 
 export * from './types'
 
@@ -26,6 +28,8 @@ export function defineFlatConfigs(
 const defaultOptions: ESLintOptions = {
   vue: true,
   nuxt: true,
+  tailwind: true,
+  strict: false,
   features: {
     tooling: false,
   },
@@ -42,12 +46,16 @@ export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableF
 
   // c.append(gitignore({ strict: false }))
   config.append(ignores())
+  config.append(typescript({ vue: opts.vue, strict: opts.strict }))
 
   if (opts.vue)
     config.append(vue())
 
   if (opts.nuxt)
     config.append(nuxt())
+
+  if (opts.tailwind)
+    config.append(tailwind())
 
   if (opts.features?.tooling) {
     config.append(jsdoc())

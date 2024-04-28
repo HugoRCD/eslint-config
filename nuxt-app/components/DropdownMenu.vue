@@ -72,7 +72,7 @@ const items =[
       ring: 'ring-1 ring-neutral-100 dark:ring-neutral-800',
       divide: 'divide-y divide-neutral-100 dark:divide-neutral-800',
       item: {
-        active: 'bg-neutral-100 dark:bg-neutral-800',
+        active: 'bg-neutral-100 h-4 w-4 dark:bg-neutral-800',
         disabled: 'cursor-text select-text'
       }
     }"

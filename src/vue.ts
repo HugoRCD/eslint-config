@@ -1,9 +1,5 @@
 // @ts-expect-error missing types
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import pluginVue from 'eslint-plugin-vue'
-// @ts-expect-error missing types
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-import pluginTailwindcss from 'eslint-plugin-tailwindcss'
 import parserTs from '@typescript-eslint/parser'
 import * as parserVue from 'vue-eslint-parser'
 import type { Linter } from 'eslint'
@@ -13,8 +9,7 @@ export default function vue(): Linter.FlatConfig[] {
     {
       name: 'vue/setup',
       plugins: {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        vue: pluginVue as any,
+        vue: pluginVue,
       },
       languageOptions: {
         parserOptions: {
@@ -46,14 +41,11 @@ export default function vue(): Linter.FlatConfig[] {
     },
     {
       name: 'vue/rules',
-      files: [
-        '**/*.vue',
-      ],
+      files: ['**/*.vue'],
       languageOptions: {
         parser: parserVue,
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      processor: pluginVue.processors['.vue'] as any,
+      processor: pluginVue.processors['.vue'],
       rules: {
         ...pluginVue.configs['vue3-recommended'].rules,
         'no-undef': 'off',
@@ -108,28 +100,5 @@ export default function vue(): Linter.FlatConfig[] {
         'vue/max-attributes-per-line': ['error', {singleline: { max: 5 } }]
       },
     },
-    {
-      name: 'vue/tailwindcss',
-      files: [
-        '**/*.vue',
-      ],
-      languageOptions: {
-        parserOptions: {
-          ecmaFeatures: {
-            jsx: true
-          }
-        }
-      },
-      plugins: {
-        'tailwindcss': pluginTailwindcss
-      },
-      rules: {
-        'tailwindcss/classnames-order': 'error',
-        'tailwindcss/no-contradicting-classname': 'error',
-        'tailwindcss/enforces-shorthand': 'error',
-        'tailwindcss/no-custom-classname': 'off',
-        'tailwindcss/no-unnecessary-arbitrary-value': 'off',
-      }
-    }
   ] as Linter.FlatConfig[]
 }

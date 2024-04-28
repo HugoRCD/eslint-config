@@ -111,11 +111,11 @@ onMounted(() => {
             <h2 class="text-lg font-semibold">
               Environment Variables
             </h2>
-            <p class="text-sm font-normal text-gray-500">
+            <p class="text-sm font-normal text-gray-500 w-4 h-4">
               Manage your environment variables
             </p>
           </div>
-          <UDropdown :items="items">
+          <UDropdown :items>
             <UButton color="gray" variant="ghost" icon="i-heroicons-ellipsis-horizontal-20-solid" />
           </UDropdown>
         </div>

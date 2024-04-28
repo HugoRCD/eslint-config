@@ -1,4 +1,4 @@
-export interface ESLintOptions {
+export type ESLintOptions = {
   /**
    * Enable Vue support
    *
@@ -12,6 +12,20 @@ export interface ESLintOptions {
    * @default true
    */
   nuxt?: boolean
+
+  /**
+   * Enable Tailwind support
+   *
+   * @default true
+   */
+  tailwind?: boolean
+
+  /**
+   * Enable strict TypeScript rules
+   *
+   * @default true
+   */
+  strict?: boolean
 
   /**
    * Features

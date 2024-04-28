@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps({
-  size:  {
+  size: {
     type: String,
     default: 'md',
   }
