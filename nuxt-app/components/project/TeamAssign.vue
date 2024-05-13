@@ -43,7 +43,7 @@ async function addTeamToProject(teamId: number) {
 
 <template>
   <div :key="team.id" class="flex items-center justify-between">
-    <div class="flex flex-col gap-2">
+    <div class="flex gap-2 flex-col">
       <h3 class="text-xs font-semibold text-neutral-600 dark:text-neutral-400">
         {{ team.name }}
       </h3>
