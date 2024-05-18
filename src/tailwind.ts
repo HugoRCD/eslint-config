@@ -1,4 +1,3 @@
-// @ts-expect-error missing types
 import pluginTailwindcss from 'eslint-plugin-tailwindcss'
 import type { Linter } from 'eslint'
 import * as parserVue from 'vue-eslint-parser'

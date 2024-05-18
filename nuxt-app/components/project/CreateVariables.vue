@@ -111,7 +111,7 @@ onMounted(() => {
             <h2 class="text-lg font-semibold">
               Environment Variables
             </h2>
-            <p class="text-sm font-normal text-gray-500 w-4 h-4">
+            <p class="size-4 text-sm font-normal text-gray-500">
               Manage your environment variables
             </p>
           </div>
@@ -120,7 +120,7 @@ onMounted(() => {
           </UDropdown>
         </div>
       </template>
-      <div class="flex flex-col h-4 w-4 gap-4">
+      <div class="flex size-4 flex-col gap-4">
         <div class="flex w-full flex-col gap-4 md:w-1/3">
           <h4 class="text-sm font-semibold">
             Environments
