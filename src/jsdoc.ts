@@ -4,7 +4,7 @@ import jsdocPlugin from 'eslint-plugin-jsdoc'
 export default function jsdoc(): Linter.FlatConfig[] {
   return [
     {
-      name: 'features/tooling/jsdoc',
+      name: 'tooling/jsdoc',
       plugins: {
         jsdoc: jsdocPlugin,
       },

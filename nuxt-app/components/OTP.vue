@@ -64,7 +64,7 @@ const handleKeyDown = function(event: KeyboardEvent, index: number) {
 
 <template>
   <div class="flex flex-col gap-4">
-    <div ref="otpRef" class="flex justify-center gap-4">
+    <div ref="otpRef" class="flex gap-4 justify-center">
       <input
         v-for="(el, index) in digits"
         ref="otpInputs"

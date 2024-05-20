@@ -1,20 +1,12 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import pluginTailwindcss from 'eslint-plugin-tailwindcss'
 import type { Linter } from 'eslint'
-import * as parserVue from 'vue-eslint-parser'
 
 export default function tailwindcss(): Linter.FlatConfig[] {
   return [
     {
       name: 'tailwindcss',
-      files: ['**/*.vue'],
-      languageOptions: {
-        parser: parserVue,
-        parserOptions: {
-          ecmaFeatures: {
-            jsx: true,
-          }
-        }
-      },
       plugins: {
         tailwindcss: pluginTailwindcss
       },
