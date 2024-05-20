@@ -6,7 +6,7 @@ import type { Linter } from 'eslint'
 export default function tailwindcss(): Linter.FlatConfig[] {
   return [
     {
-      name: 'tailwindcss',
+      name: 'tailwindcss/rules',
       plugins: {
         tailwindcss: pluginTailwindcss
       },
