@@ -1,18 +1,18 @@
 import type { ResolvableFlatConfig, FlatConfigComposer } from 'eslint-flat-config-utils'
 import { composer } from 'eslint-flat-config-utils'
-import gitignore from 'eslint-config-flat-gitignore'
+// import gitignore from 'eslint-config-flat-gitignore'
 import type { Linter } from 'eslint'
 import defu from 'defu'
-import type { ESLintOptions } from './types'
-import nuxt from './src/nuxt'
-import vue from './src/vue'
-import tailwindcss from './src/tailwind'
-import jsdoc from './src/jsdoc'
-import ignores from './src/ignores'
-import imports from './src/import'
-import typescript from './src/typescript'
+import type { ESLintOptions } from './types/index'
+import nuxt from './languages/nuxt'
+import vue from './languages/vue'
+import tailwindcss from './plugins/tailwind'
+import jsdoc from './plugins/jsdoc'
+import ignores from './plugins/ignores'
+import imports from './plugins/import'
+import typescript from './languages/typescript'
 
-export * from './types'
+export * from './types/index'
 
 /**
  * Provide type definitions for constructing ESLint flat config items.
@@ -70,4 +70,3 @@ export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableF
 
   return config
 }
-
