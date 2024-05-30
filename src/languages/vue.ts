@@ -47,6 +47,9 @@ export default function vue(): Linter.FlatConfig[] {
       },
       processor: pluginVue.processors['.vue'],
       rules: {
+        ...pluginVue.configs.base.rules,
+        ...pluginVue.configs['vue3-essential'].rules,
+        ...pluginVue.configs['vue3-strongly-recommended'].rules,
         ...pluginVue.configs['vue3-recommended'].rules,
         'no-undef': 'off',
         'vue/block-order': [
