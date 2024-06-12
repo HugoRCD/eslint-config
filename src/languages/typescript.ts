@@ -8,6 +8,10 @@ type ESLintTypescriptOptions = {
    * Whether to use strict mode (enable explicit return types and other strict rules)
    */
   strict?: boolean
+  /**
+   * Whether to enable console log or not
+   */
+  consoleLog?: boolean
 }
 
 export default function typescript(options?: ESLintTypescriptOptions): Linter.FlatConfig[] {
@@ -28,7 +32,7 @@ export default function typescript(options?: ESLintTypescriptOptions): Linter.Fl
         ...pluginTs.configs.recommended.rules,
         '@typescript-eslint/explicit-function-return-type': options?.strict ? 'error' : 'off',
         '@typescript-eslint/no-explicit-any': options?.strict ? 'error' : 'off',
-        'no-console': 'warn',
+        'no-console': options?.consoleLog ? 'off' : 'warn',
         'no-undef': 'off',
         'func-name-matching': 'error',
         'no-empty-function': 'off',

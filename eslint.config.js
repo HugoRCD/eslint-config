@@ -1,7 +1,8 @@
 import { createConfig } from "./dist/index.cjs"
 
 export default createConfig({
-  features: {
-    tooling: true,
-  }
+	consoleLog: false,
+	features: {
+		tooling: true,
+	}
 })

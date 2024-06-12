@@ -5,6 +5,7 @@ defineProps({
     default: 'md',
   }
 })
+console.log("test")
 </script>
 
 <template>

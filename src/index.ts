@@ -3,7 +3,7 @@ import { composer } from 'eslint-flat-config-utils'
 // import gitignore from 'eslint-config-flat-gitignore'
 import type { Linter } from 'eslint'
 import defu from 'defu'
-import type { ESLintOptions } from './types/index'
+import type { ESLintOptions } from './types'
 import nuxt from './languages/nuxt'
 import vue from './languages/vue'
 import tailwindcss from './plugins/tailwind'
@@ -31,6 +31,7 @@ const defaultOptions: ESLintOptions = {
   nuxt: true,
   tailwind: true,
   strict: false,
+  consoleLog: true,
   features: {
     tooling: false,
   },
@@ -50,7 +51,7 @@ export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableF
   config.append(ignores())
   config.append(imports())
 
-  config.append(typescript({ vue: opts.vue, strict: opts.strict }))
+  config.append(typescript({ vue: opts.vue, strict: opts.strict, consoleLog: opts.consoleLog }))
 
   if (opts.vue)
     config.append(vue())

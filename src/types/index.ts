@@ -28,6 +28,13 @@ export type ESLintOptions = {
   strict?: boolean
 
   /**
+   * Enable console.log
+   *
+   * @default true
+   */
+  consoleLog?: boolean
+
+  /**
    * Features
    *
    */
