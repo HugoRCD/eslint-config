@@ -92,13 +92,13 @@ export default function vue(): Linter.FlatConfig[] {
             allowEmptyLines: false
           }
         ],
-        'vue/block-lang': ['error', {script: {lang: 'ts'}}],
+        'vue/block-lang': ['error', { script: { lang: 'ts' } }],
         'vue/component-api-style': [
           'error',
           ['script-setup']
         ],
         'vue/no-ref-object-reactivity-loss': 'warn',
-        'vue/max-attributes-per-line': ['error', {singleline: { max: 5 } }]
+        'vue/max-attributes-per-line': ['error', { singleline: { max: 5 } }]
       },
     },
   ] as Linter.FlatConfig[]

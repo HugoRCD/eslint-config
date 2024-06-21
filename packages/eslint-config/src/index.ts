@@ -1,6 +1,6 @@
 import type { ResolvableFlatConfig, FlatConfigComposer } from 'eslint-flat-config-utils'
 import { composer } from 'eslint-flat-config-utils'
-// import gitignore from 'eslint-config-flat-gitignore'
+import gitignore from 'eslint-config-flat-gitignore'
 import type { Linter } from 'eslint'
 import defu from 'defu'
 import type { ESLintOptions } from './types'
@@ -19,6 +19,8 @@ export * from './types/index'
  *
  * This function takes flat config item, or an array of them as rest arguments.
  * It also automatically resolves the promise if the config item is a promise.
+ * @param {...ResolvableFlatConfig} configs - The flat config items to resolve.
+ * @returns {FlatConfigComposer<Linter.FlatConfig>} - The array of resolved flat config items.
  */
 export function defineFlatConfigs(
   ...configs: ResolvableFlatConfig[]
@@ -41,13 +43,16 @@ const defaultOptions: ESLintOptions = {
 /**
  * Create an array of ESLint flat configs, based on the given options.
  * Accepts appending user configs as rest arguments from the second argument.
+ * @param {options} options - The ESLint options.
+ * @param {userConfigs} userConfigs - The user configs to append.
+ * @returns {FlatConfigComposer<Linter.FlatConfig>} - The array of ESLint flat configs.
  */
 export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.FlatConfig> {
   const opts = defu(options, defaultOptions)
 
   const config = composer()
 
-  // config.append(gitignore({ strict: false }))
+  config.append(gitignore({ strict: false }))
 
   config.append(ignores())
   config.append(imports())
