@@ -1,27 +1,9 @@
 import parserTs from '@typescript-eslint/parser'
 import pluginTs from '@typescript-eslint/eslint-plugin'
 import type { Linter } from 'eslint'
+import { TypeScriptConfigOptions } from '../types'
 
-type ESLintTypescriptOptions = {
-  vue?: boolean
-  /**
-   * Whether to use strict mode (enable explicit return types and other strict rules)
-   * @default false
-   */
-  strict?: boolean
-  /**
-   * Whether to enable console log or not
-   * @default false
-   */
-  consoleLog?: boolean
-  /**
-   * Whether to enable case check or not
-   * @default true
-   */
-  caseCheck?: boolean
-}
-
-export default function typescript(options?: ESLintTypescriptOptions): Linter.FlatConfig[] {
+export default function typescript(options?: TypeScriptConfigOptions): Linter.FlatConfig[] {
   return [
     {
       name: 'typescript/setup',

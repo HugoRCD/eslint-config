@@ -3,7 +3,7 @@ import { composer } from 'eslint-flat-config-utils'
 import gitignore from 'eslint-config-flat-gitignore'
 import type { Linter } from 'eslint'
 import defu from 'defu'
-import type { ESLintOptions } from './types'
+import { ESLintConfigOptions } from './types'
 import nuxt from './languages/nuxt'
 import vue from './languages/vue'
 import tailwindcss from './plugins/tailwind'
@@ -28,15 +28,29 @@ export function defineFlatConfigs(
   return composer(...configs)
 }
 
-const defaultOptions: ESLintOptions = {
-  vue: true,
-  nuxt: true,
-  tailwind: true,
-  strict: false,
-  consoleLog: true,
-  caseCheck: true,
+const defaultOptions: ESLintConfigOptions = {
+  vue: {
+    enable: true
+  },
+  nuxt: {
+    enable: true
+  },
+  tailwind: {
+    enable: true
+  },
+  typescript: {
+    enable: true,
+    vue: true,
+    strict: false,
+    consoleLog: true,
+    caseCheck: true
+  },
   features: {
-    tooling: false,
+    enable: false,
+    jsdoc: {
+      enable: true,
+      strict: false
+    }
   },
 }
 
@@ -47,7 +61,7 @@ const defaultOptions: ESLintOptions = {
  * @param {userConfigs} userConfigs - The user configs to append.
  * @returns {FlatConfigComposer<Linter.FlatConfig>} - The array of ESLint flat configs.
  */
-export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.FlatConfig> {
+export function createConfig(options: ESLintConfigOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.FlatConfig> {
   const opts = defu(options, defaultOptions)
 
   const config = composer()
@@ -57,7 +71,7 @@ export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableF
   config.append(ignores())
   config.append(imports())
 
-  config.append(typescript({ vue: opts.vue, strict: opts.strict, consoleLog: opts.consoleLog, caseCheck: opts.caseCheck }))
+  config.append(typescript(opts.typescript))
 
   if (opts.vue)
     config.append(vue())
@@ -68,8 +82,8 @@ export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableF
   if (opts.tailwind)
     config.append(tailwindcss())
 
-  if (opts.features?.tooling)
-    config.append(jsdoc())
+  if (opts.features?.enable)
+    config.append(jsdoc(opts.features.jsdoc))
 
   if (userConfigs.length > 0) {
     config.append(...userConfigs)

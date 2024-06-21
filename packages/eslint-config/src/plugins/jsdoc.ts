@@ -1,7 +1,8 @@
 import type { Linter } from 'eslint'
 import jsdocPlugin from 'eslint-plugin-jsdoc'
+import { JSDocConfigOptions } from '../types'
 
-export default function jsdoc(): Linter.FlatConfig[] {
+export default function jsdoc(options?: JSDocConfigOptions): Linter.FlatConfig[] {
   return [
     {
       name: 'tooling/jsdoc',
@@ -9,6 +10,25 @@ export default function jsdoc(): Linter.FlatConfig[] {
         jsdoc: jsdocPlugin,
       },
       rules: {
+        'jsdoc/require-jsdoc': [
+          options?.strict ? 'error' : 'off',
+          {
+            require: {
+              FunctionDeclaration: true,
+              MethodDefinition: true,
+              ClassDeclaration: true,
+              FunctionExpression: true,
+              ArrowFunctionExpression: true,
+            },
+            contexts: [
+              'FunctionDeclaration',
+              'MethodDefinition:not([accessibility="private"])', // Optional: Exclude private methods
+              'ClassDeclaration',
+              'FunctionExpression',
+              'ArrowFunctionExpression',
+            ],
+          },
+        ],
         'jsdoc/check-access': 'warn',
         'jsdoc/check-param-names': 'warn',
         'jsdoc/check-property-names': 'warn',

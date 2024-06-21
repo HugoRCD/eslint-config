@@ -15,10 +15,9 @@ defineProps({
 const {
   createLoading,
   fetchTeams,
-  createTeam,
 } = useTeams()
 
-async function create_team(name: string) {
+async function createTeam(name: string) {
   createLoading.value = true
   await createTeam(name)
   createLoading.value = false
@@ -34,7 +33,7 @@ async function create_team(name: string) {
         <slot />
       </UButton>
       <template #panel>
-        <form @submit.prevent="create_team(teamName)">
+        <form @submit.prevent="createTeam(teamName)">
           <UCard>
             <div class="flex flex-col gap-2">
               <p class="flex gap-2 text-sm font-semibold leading-6">

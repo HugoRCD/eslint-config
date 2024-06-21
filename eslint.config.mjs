@@ -1,8 +1,11 @@
 import { createConfig } from "@hrcd/eslint-config"
 
 export default createConfig({
-	consoleLog: false,
-	features: {
-		tooling: true,
-	}
+  features: {
+    enable: true,
+    jsdoc: {
+      enable: true,
+      strict: false,
+    },
+  },
 })
