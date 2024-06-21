@@ -6,12 +6,19 @@ type ESLintTypescriptOptions = {
   vue?: boolean
   /**
    * Whether to use strict mode (enable explicit return types and other strict rules)
+   * @default false
    */
   strict?: boolean
   /**
    * Whether to enable console log or not
+   * @default false
    */
   consoleLog?: boolean
+  /**
+   * Whether to enable case check or not
+   * @default true
+   */
+  caseCheck?: boolean
 }
 
 export default function typescript(options?: ESLintTypescriptOptions): Linter.FlatConfig[] {
@@ -87,8 +94,7 @@ export default function typescript(options?: ESLintTypescriptOptions): Linter.Fl
           }
         ],
         '@typescript-eslint/naming-convention': [
-          'error',
-
+          options?.caseCheck ? 'error' : 'off',
           {
             'selector': 'variableLike',
             'format': ['camelCase', 'UPPER_CASE'],

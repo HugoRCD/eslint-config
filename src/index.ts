@@ -32,6 +32,7 @@ const defaultOptions: ESLintOptions = {
   tailwind: true,
   strict: false,
   consoleLog: true,
+  caseCheck: true,
   features: {
     tooling: false,
   },
@@ -51,7 +52,7 @@ export function createConfig(options: ESLintOptions, ...userConfigs: ResolvableF
   config.append(ignores())
   config.append(imports())
 
-  config.append(typescript({ vue: opts.vue, strict: opts.strict, consoleLog: opts.consoleLog }))
+  config.append(typescript({ vue: opts.vue, strict: opts.strict, consoleLog: opts.consoleLog, caseCheck: opts.caseCheck }))
 
   if (opts.vue)
     config.append(vue())

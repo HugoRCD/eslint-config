@@ -35,6 +35,12 @@ export type ESLintOptions = {
   consoleLog?: boolean
 
   /**
+   * Whether to enable case check or not
+   * @default true
+   */
+  caseCheck?: boolean
+
+  /**
    * Features
    *
    */
