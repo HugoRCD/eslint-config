@@ -78,6 +78,61 @@ export default function typescript(options?: ESLintTypescriptOptions): Linter.Fl
           'error',
           '1tbs'
         ],
+        'padded-blocks': [
+          'error',
+          {
+            'blocks': 'never',
+            'classes': 'always',
+            'switches': 'never'
+          }
+        ],
+        '@typescript-eslint/naming-convention': [
+          'error',
+
+          {
+            'selector': 'variableLike',
+            'format': ['camelCase', 'UPPER_CASE'],
+            'leadingUnderscore': 'allow',
+          },
+          {
+            'selector': 'typeLike',
+            'format': ['PascalCase'],
+          },
+          {
+            'selector': 'interface',
+            'format': ['PascalCase'],
+            'custom': {
+              'regex': '^I[A-Z]',
+              'match': false,
+            },
+          },
+          {
+            'selector': 'class',
+            'format': ['PascalCase'],
+          },
+          {
+            'selector': 'enum',
+            'format': ['PascalCase', 'UPPER_CASE']
+          },
+          {
+            'selector': 'enumMember',
+            'format': ['PascalCase', 'UPPER_CASE'],
+          },
+          {
+            'selector': 'function',
+            'format': ['camelCase'],
+          },
+          {
+            'selector': 'parameter',
+            'format': ['camelCase'],
+            'leadingUnderscore': 'allow',
+          },
+          {
+            'selector': 'typeParameter',
+            'format': ['PascalCase'],
+            'prefix': ['T']
+          }
+        ],
         'comma-dangle': ['off',],
         'comma-spacing': [
           'error',
@@ -224,6 +279,8 @@ export default function typescript(options?: ESLintTypescriptOptions): Linter.Fl
           }
         ],
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+        'prefer-destructuring': ['error', { array: true, object: true }, { enforceForRenamedProperties: false }],
+        'object-curly-spacing': ['error', 'always'],
         '@typescript-eslint/no-duplicate-enum-values': 'error',
         '@typescript-eslint/default-param-last': 'error',
         '@typescript-eslint/no-unused-vars': 'off',
