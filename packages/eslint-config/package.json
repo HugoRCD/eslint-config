@@ -31,10 +31,10 @@
     "dev": "unbuild && eslint ."
   },
   "peerDependencies": {
-    "eslint": "^9.5.0"
+    "eslint": "^9.6.0"
   },
   "dependencies": {
-    "@eslint/js": "^9.5.0",
+    "@eslint/js": "^9.6.0",
     "@nuxt/eslint-plugin": "^0.3.13",
     "@rushstack/eslint-patch": "^1.10.3",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
@@ -44,18 +44,18 @@
     "eslint-config-flat-gitignore": "^0.1.5",
     "eslint-flat-config-utils": "^0.2.5",
     "eslint-plugin-import-x": "^0.5.2",
-    "eslint-plugin-jsdoc": "^48.4.0",
+    "eslint-plugin-jsdoc": "^48.5.0",
     "eslint-plugin-vue": "^9.26.0",
     "tslib": "^2.6.3",
     "vue-eslint-parser": "^9.4.3"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.5",
+    "@types/bun": "^1.1.6",
     "@types/eslint": "^8.56.10",
     "automd": "^0.3.7",
     "bun-plugin-dts": "^0.2.3",
     "changelogen": "^0.5.5",
-    "eslint": "^9.5.0",
+    "eslint": "^9.6.0",
     "typescript": "^5.5.2",
     "unbuild": "^2.0.0"
   },
