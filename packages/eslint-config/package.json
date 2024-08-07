@@ -31,32 +31,32 @@
     "dev": "unbuild && eslint ."
   },
   "peerDependencies": {
-    "eslint": "^9.7.0"
+    "eslint": "^9.8.0"
   },
   "dependencies": {
-    "@eslint/js": "^9.7.0",
-    "@nuxt/eslint-plugin": "^0.3.13",
-    "@rushstack/eslint-patch": "^1.10.3",
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "@typescript-eslint/parser": "^7.16.1",
+    "@eslint/js": "^9.8.0",
+    "@nuxt/eslint-plugin": "^0.5.0",
+    "@rushstack/eslint-patch": "^1.10.4",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "eslint-plugin-tailwindcss": "3.17.4",
     "defu": "^6.1.4",
     "eslint-config-flat-gitignore": "^0.1.8",
-    "eslint-flat-config-utils": "^0.2.5",
+    "eslint-flat-config-utils": "^0.3.0",
     "eslint-plugin-import-x": "^0.5.3",
-    "eslint-plugin-jsdoc": "^48.7.0",
+    "eslint-plugin-jsdoc": "^48.11.0",
     "eslint-plugin-vue": "^9.27.0",
     "tslib": "^2.6.3",
     "vue-eslint-parser": "^9.4.3"
   },
   "devDependencies": {
     "@types/bun": "^1.1.6",
-    "@types/eslint": "^8.56.10",
+    "@types/eslint": "^8.56.11",
     "automd": "^0.3.8",
     "bun-plugin-dts": "^0.2.3",
     "changelogen": "^0.5.5",
-    "eslint": "^9.7.0",
-    "typescript": "^5.5.3",
+    "eslint": "^9.8.0",
+    "typescript": "^5.5.4",
     "unbuild": "^2.0.0"
   },
   "packageManager": "bun@1.0.30"
