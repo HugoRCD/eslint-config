@@ -9,10 +9,10 @@
     "release": "changelogen --release --push"
   },
   "peerDependencies": {
-    "eslint": "^9.8.0"
+    "eslint": "^9.9.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.8.0",
+    "@eslint/js": "^9.9.0",
     "@types/bun": "^1.1.6",
     "@types/eslint": "^8.56.11"
   },
