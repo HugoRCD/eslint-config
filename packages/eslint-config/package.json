@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@types/bun": "^1.1.6",
-    "@types/eslint": "^8.56.11",
+    "@types/eslint": "^9.6.0",
     "automd": "^0.3.8",
     "bun-plugin-dts": "^0.2.3",
     "changelogen": "^0.5.5",
