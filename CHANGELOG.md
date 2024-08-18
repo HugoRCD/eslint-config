@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.1
+
+[compare changes](https://github.com/HugoRCD/eslint-config/compare/v2.0.0...v0.0.1)
+
 ## v1.1.4
 
 [compare changes](https://github.com/HugoRCD/eslint-config/compare/v1.1.3...v1.1.4)
