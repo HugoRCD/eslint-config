@@ -26,7 +26,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
-    "release": "changelogen --release --push",
+    "release": "bun run build && bun run automd && changelogen --release --push",
     "build": "unbuild",
     "dev": "unbuild && eslint ."
   },
