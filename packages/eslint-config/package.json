@@ -27,7 +27,7 @@
     "dev": "unbuild && eslint .",
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
-    "release": "bun run build && bun run automd && changelogen --release --push",
+    "release": "bun run build && changelogen --release --push",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

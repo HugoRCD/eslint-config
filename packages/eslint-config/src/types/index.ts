@@ -74,6 +74,11 @@ export type PackageJsonConfigOptions = {
    * @default true
    */
   enabled?: boolean
+  /**
+   * Enable package.json strict mode.
+   * @default false
+   */
+  strict?: boolean
 }
 
 export type FeaturesConfigOptions = {

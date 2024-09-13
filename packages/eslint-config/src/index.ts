@@ -52,7 +52,8 @@ const defaultOptions: ESLintConfigOptions = {
       strict: false
     },
     packageJson: {
-      enabled: true
+      enabled: true,
+      strict: false
     }
   },
 }
