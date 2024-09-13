@@ -3,7 +3,7 @@ export type VueConfigOptions = {
    * Enable Vue support.
    * @default true
    */
-  enable?: boolean
+  enabled?: boolean
 }
 
 export type NuxtConfigOptions = {
@@ -11,7 +11,7 @@ export type NuxtConfigOptions = {
    * Enable Nuxt support.
    * @default true
    */
-  enable?: boolean
+  enabled?: boolean
 }
 
 export type TailwindConfigOptions = {
@@ -19,7 +19,7 @@ export type TailwindConfigOptions = {
    * Enable Tailwind support.
    * @default true
    */
-  enable?: boolean
+  enabled?: boolean
 }
 
 export type TypeScriptConfigOptions = {
@@ -27,7 +27,7 @@ export type TypeScriptConfigOptions = {
    * Enable TypeScript support.
    * @default true
    */
-  enable?: boolean
+  enabled?: boolean
 
   /**
    * Whether to check Vue files.
@@ -48,7 +48,7 @@ export type TypeScriptConfigOptions = {
   consoleLog?: boolean
 
   /**
-   * Whether to enable case check or not.
+   * Whether to enabled case check or not.
    * @default true
    */
   caseCheck?: boolean
@@ -59,7 +59,7 @@ export type JSDocConfigOptions = {
    * Enable JSDoc support.
    * @default true
    */
-  enable?: boolean
+  enabled?: boolean
 
   /**
    * Enable JSDoc strict mode.
@@ -68,17 +68,24 @@ export type JSDocConfigOptions = {
   strict?: boolean
 }
 
-export type FeaturesConfigOptions = {
+export type PackageJsonConfigOptions = {
   /**
-   * Enable tooling features (Useful for packages creators who want to provide a better developer experience).
-   * @default false
+   * Enable package.json support.
+   * @default true
    */
-  enable?: boolean
+  enabled?: boolean
+}
 
+export type FeaturesConfigOptions = {
   /**
    * JSDoc config.
    */
   jsdoc?: JSDocConfigOptions
+
+  /**
+   * Package.json config.
+   */
+  packageJson?: PackageJsonConfigOptions
 }
 
 export type ESLintConfigOptions = {
@@ -105,5 +112,5 @@ export type ESLintConfigOptions = {
   /**
    * Features config.
    */
-  features?: FeaturesConfigOptions
+  features: FeaturesConfigOptions
 }

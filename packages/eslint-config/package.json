@@ -1,37 +1,34 @@
 {
   "name": "@hrcd/eslint-config",
   "version": "2.0.2",
-  "author": "HugoRCD",
+  "description": "My personal eslint config",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HugoRCD/eslint-config.git",
     "directory": "packages/eslint-config"
   },
-  "description": "My personal eslint config",
   "funding": "https://github.com/sponsors/HugoRCD",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "author": "HugoRCD",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "automd": "automd",
-    "typecheck": "tsc --noEmit",
+    "build": "unbuild",
+    "dev": "unbuild && eslint .",
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
     "release": "bun run build && bun run automd && changelogen --release --push",
-    "build": "unbuild",
-    "dev": "unbuild && eslint ."
-  },
-  "peerDependencies": {
-    "eslint": "^9.10.0"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@eslint/js": "^9.10.0",
@@ -39,13 +36,15 @@
     "@rushstack/eslint-patch": "^1.10.4",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
-    "eslint-plugin-tailwindcss": "3.17.4",
     "defu": "^6.1.4",
     "eslint-config-flat-gitignore": "^0.3.0",
     "eslint-flat-config-utils": "^0.4.0",
     "eslint-plugin-import-x": "^3.1.0",
     "eslint-plugin-jsdoc": "^50.2.2",
+    "eslint-plugin-package-json": "^0.15.3",
+    "eslint-plugin-tailwindcss": "3.17.4",
     "eslint-plugin-vue": "^9.28.0",
+    "jsonc-eslint-parser": "^2.4.0",
     "tslib": "^2.7.0",
     "vue-eslint-parser": "^9.4.3"
   },
@@ -58,6 +57,9 @@
     "eslint": "^9.10.0",
     "typescript": "^5.6.2",
     "unbuild": "^2.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.10.0"
   },
   "packageManager": "bun@1.0.30"
 }

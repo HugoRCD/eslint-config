@@ -8,6 +8,7 @@ import nuxt from './languages/nuxt'
 import vue from './languages/vue'
 import tailwindcss from './plugins/tailwind'
 import jsdoc from './plugins/jsdoc'
+import packageJson from './plugins/package'
 import ignores from './plugins/ignores'
 import imports from './plugins/import'
 import typescript from './languages/typescript'
@@ -30,26 +31,28 @@ export function defineFlatConfigs(
 
 const defaultOptions: ESLintConfigOptions = {
   vue: {
-    enable: true
+    enabled: true
   },
   nuxt: {
-    enable: true
+    enabled: true
   },
   tailwind: {
-    enable: true
+    enabled: true
   },
   typescript: {
-    enable: true,
+    enabled: true,
     vue: true,
     strict: false,
     consoleLog: true,
     caseCheck: true
   },
   features: {
-    enable: false,
     jsdoc: {
-      enable: true,
+      enabled: false,
       strict: false
+    },
+    packageJson: {
+      enabled: true
     }
   },
 }
@@ -82,8 +85,11 @@ export function createConfig(options: ESLintConfigOptions, ...userConfigs: Resol
   if (opts.tailwind)
     config.append(tailwindcss())
 
-  if (opts.features?.enable)
+  if (opts.features.jsdoc?.enabled)
     config.append(jsdoc(opts.features.jsdoc))
+
+  if (opts.features.packageJson?.enabled)
+    config.append(packageJson(opts.features.packageJson))
 
   if (userConfigs.length > 0) {
     config.append(...userConfigs)
