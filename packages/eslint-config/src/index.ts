@@ -86,10 +86,10 @@ export function createConfig(options: ESLintConfigOptions, ...userConfigs: Resol
   if (opts.tailwind)
     config.append(tailwindcss())
 
-  if (opts.features.jsdoc?.enabled)
+  if (opts.features?.jsdoc?.enabled)
     config.append(jsdoc(opts.features.jsdoc))
 
-  if (opts.features.packageJson?.enabled)
+  if (opts.features?.packageJson?.enabled)
     config.append(packageJson(opts.features.packageJson))
 
   if (userConfigs.length > 0) {
