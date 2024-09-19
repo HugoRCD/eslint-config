@@ -117,5 +117,5 @@ export type ESLintConfigOptions = {
   /**
    * Features config.
    */
-  features: FeaturesConfigOptions
+  features?: FeaturesConfigOptions
 }
