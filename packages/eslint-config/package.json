@@ -1,6 +1,6 @@
 {
   "name": "@hrcd/eslint-config",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "My personal eslint config",
   "repository": {
     "type": "git",
