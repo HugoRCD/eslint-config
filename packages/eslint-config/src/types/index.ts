@@ -48,6 +48,12 @@ export type TypeScriptConfigOptions = {
   consoleLog?: boolean
 
   /**
+   * Allow to use `any` type.
+   * @default false
+   */
+  any?: boolean
+
+  /**
    * Whether to enabled case check or not.
    * @default true
    */

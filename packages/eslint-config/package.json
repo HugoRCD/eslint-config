@@ -1,6 +1,6 @@
 {
   "name": "@hrcd/eslint-config",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "My personal eslint config",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.12.0",
     "@nuxt/eslint-plugin": "^0.5.7",
     "@rushstack/eslint-patch": "^1.10.4",
     "@typescript-eslint/eslint-plugin": "^8.7.0",

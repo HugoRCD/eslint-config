@@ -20,7 +20,7 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Fl
       rules: {
         ...pluginTs.configs.recommended.rules,
         '@typescript-eslint/explicit-function-return-type': options?.strict ? 'error' : 'off',
-        '@typescript-eslint/no-explicit-any': options?.strict ? 'error' : 'off',
+        '@typescript-eslint/no-explicit-any': options?.any ? 'off' : options?.strict ? 'error' : 'off',
         'no-console': options?.consoleLog ? 'off' : 'warn',
         'no-undef': 'off',
         'func-name-matching': 'error',

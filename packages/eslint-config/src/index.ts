@@ -43,6 +43,7 @@ const defaultOptions: ESLintConfigOptions = {
     enabled: true,
     vue: true,
     strict: false,
+    any: false,
     consoleLog: true,
     caseCheck: true
   },
