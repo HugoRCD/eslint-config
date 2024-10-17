@@ -1,4 +1,3 @@
-// @ts-expect-error missing types
 import pluginVue from 'eslint-plugin-vue'
 import parserTs from '@typescript-eslint/parser'
 import * as parserVue from 'vue-eslint-parser'
