@@ -7,7 +7,7 @@ import { ESLintConfigOptions } from './types'
 import nuxt from './languages/nuxt'
 import vue from './languages/vue'
 import jsdoc from './plugins/jsdoc'
-// import packageJson from './plugins/package'
+import packageJson from './plugins/package'
 import ignores from './plugins/ignores'
 import imports from './plugins/import'
 import typescript from './languages/typescript'
@@ -83,8 +83,8 @@ export function createConfig(options: ESLintConfigOptions, ...userConfigs: Resol
   if (opts.features?.jsdoc?.enabled)
     config.append(jsdoc(opts.features.jsdoc))
 
-  // if (opts.features?.packageJson?.enabled)
-  //  config.append(packageJson(opts.features.packageJson))
+  if (opts.features?.packageJson?.enabled)
+    config.append(packageJson(opts.features.packageJson))
 
   if (userConfigs.length > 0) {
     config.append(...userConfigs)
