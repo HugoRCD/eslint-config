@@ -7,7 +7,6 @@ export default function packageJsonPlugin(options?: PackageJsonConfigOptions): L
     {
       ...packageJson,
       rules: {
-        ...packageJson.rules,
         'package-json/order-properties': options?.strict ? 'error' : 'off',
         'package-json/repository-shorthand': 'error',
         'package-json/sort-collections': options?.strict ? 'error' : 'off',

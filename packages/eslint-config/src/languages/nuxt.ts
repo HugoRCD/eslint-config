@@ -1,7 +1,7 @@
 import nuxtPlugin from '@nuxt/eslint-plugin'
 import type { Linter } from 'eslint'
 
-export default function nuxt(): Linter.FlatConfig[] {
+export default function nuxt(): Linter.Config[] {
   return [
     {
       name: 'nuxt/rules',
@@ -12,5 +12,5 @@ export default function nuxt(): Linter.FlatConfig[] {
         'nuxt/prefer-import-meta': 'error',
       },
     }
-  ] as Linter.FlatConfig[]
+  ] as Linter.Config[]
 }

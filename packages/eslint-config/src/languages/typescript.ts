@@ -3,7 +3,7 @@ import pluginTs from '@typescript-eslint/eslint-plugin'
 import type { Linter } from 'eslint'
 import { TypeScriptConfigOptions } from '../types'
 
-export default function typescript(options?: TypeScriptConfigOptions): Linter.FlatConfig[] {
+export default function typescript(options?: TypeScriptConfigOptions): Linter.Config[] {
   return [
     {
       name: 'typescript/setup',
@@ -279,5 +279,5 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Fl
         'no-unused-vars': 'off',
       },
     },
-  ] as Linter.FlatConfig[]
+  ] as Linter.Config[]
 }

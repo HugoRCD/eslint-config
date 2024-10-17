@@ -4,7 +4,7 @@ import parserTs from '@typescript-eslint/parser'
 import * as parserVue from 'vue-eslint-parser'
 import type { Linter } from 'eslint'
 
-export default function vue(): Linter.FlatConfig[] {
+export default function vue(): Linter.Config[] {
   return [
     {
       name: 'vue/setup',
@@ -101,5 +101,5 @@ export default function vue(): Linter.FlatConfig[] {
         'vue/max-attributes-per-line': ['error', { singleline: { max: 5 } }]
       },
     },
-  ] as Linter.FlatConfig[]
+  ] as Linter.Config[]
 }

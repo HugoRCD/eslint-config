@@ -2,7 +2,7 @@ import type { Linter } from 'eslint'
 import jsdocPlugin from 'eslint-plugin-jsdoc'
 import { JSDocConfigOptions } from '../types'
 
-export default function jsdoc(options?: JSDocConfigOptions): Linter.FlatConfig[] {
+export default function jsdoc(options?: JSDocConfigOptions): Linter.Config[] {
   return [
     {
       name: 'tooling/jsdoc',

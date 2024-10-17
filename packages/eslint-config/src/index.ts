@@ -20,11 +20,11 @@ export * from './types/index'
  * This function takes flat config item, or an array of them as rest arguments.
  * It also automatically resolves the promise if the config item is a promise.
  * @param {...ResolvableFlatConfig} configs - The flat config items to resolve.
- * @returns {FlatConfigComposer<Linter.FlatConfig>} - The array of resolved flat config items.
+ * @returns {FlatConfigComposer<Linter.Config>} - The array of resolved flat config items.
  */
 export function defineFlatConfigs(
   ...configs: ResolvableFlatConfig[]
-): FlatConfigComposer<Linter.FlatConfig> {
+): FlatConfigComposer<Linter.Config> {
   return composer(...configs)
 }
 
@@ -60,9 +60,9 @@ const defaultOptions: ESLintConfigOptions = {
  * Accepts appending user configs as rest arguments from the second argument.
  * @param {options} options - The ESLint options.
  * @param {userConfigs} userConfigs - The user configs to append.
- * @returns {FlatConfigComposer<Linter.FlatConfig>} - The array of ESLint flat configs.
+ * @returns {FlatConfigComposer<Linter.Config>} - The array of ESLint flat configs.
  */
-export function createConfig(options: ESLintConfigOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.FlatConfig> {
+export function createConfig(options: ESLintConfigOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.Config> {
   const opts = defu(options, defaultOptions)
 
   const config = composer()
