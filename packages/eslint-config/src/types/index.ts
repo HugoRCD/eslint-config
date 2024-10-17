@@ -14,14 +14,6 @@ export type NuxtConfigOptions = {
   enabled?: boolean
 }
 
-export type TailwindConfigOptions = {
-  /**
-   * Enable Tailwind support.
-   * @default true
-   */
-  enabled?: boolean
-}
-
 export type TypeScriptConfigOptions = {
   /**
    * Enable TypeScript support.
@@ -109,11 +101,6 @@ export type ESLintConfigOptions = {
    * Nuxt config.
    */
   nuxt?: NuxtConfigOptions
-
-  /**
-   * Tailwind config.
-   */
-  tailwind?: TailwindConfigOptions
 
   /**
    * TypeScript config.

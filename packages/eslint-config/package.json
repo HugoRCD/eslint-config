@@ -1,6 +1,6 @@
 {
   "name": "@hrcd/eslint-config",
-  "version": "2.1.1",
+  "version": "2.1.1-edge",
   "description": "My personal eslint config",
   "repository": {
     "type": "git",
@@ -21,14 +21,19 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "automd": "automd",
     "build": "unbuild",
     "dev": "unbuild && eslint .",
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
-    "release": "bun run build && changelogen --release --push",
-    "typecheck": "tsc --noEmit"
+    "release": "bun run build && npm publis",
+    "release:edge": "bun run build && npm publish --tag edge",
+    "typecheck": "tsc --noEmit",
+    "test": "bun run lint && bun run typecheck && bun run build"
   },
   "dependencies": {
     "@eslint/js": "^9.12.0",
@@ -42,7 +47,6 @@
     "eslint-plugin-import-x": "^4.3.1",
     "eslint-plugin-jsdoc": "^50.3.1",
     "eslint-plugin-package-json": "^0.15.3",
-    "eslint-plugin-tailwindcss": "3.17.5",
     "eslint-plugin-vue": "^9.28.0",
     "jsonc-eslint-parser": "^2.4.0",
     "tslib": "^2.7.0",

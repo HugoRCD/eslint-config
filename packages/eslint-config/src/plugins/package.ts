@@ -2,11 +2,12 @@ import type { Linter } from 'eslint'
 import packageJson from 'eslint-plugin-package-json/configs/recommended'
 import { PackageJsonConfigOptions } from '../types'
 
-export default function packageJsonPlugin(options?: PackageJsonConfigOptions): Linter.FlatConfig[] {
+export default function packageJsonPlugin(options?: PackageJsonConfigOptions): Linter.Config[] {
   return [
     {
       ...packageJson,
       rules: {
+        ...packageJson.rules,
         'package-json/order-properties': options?.strict ? 'error' : 'off',
         'package-json/repository-shorthand': 'error',
         'package-json/sort-collections': options?.strict ? 'error' : 'off',
@@ -14,6 +15,6 @@ export default function packageJsonPlugin(options?: PackageJsonConfigOptions): L
         'package-json/valid-package-def': 'error',
         'package-json/valid-version': 'error',
       },
-    },
+    } as Linter.Config,
   ]
 }

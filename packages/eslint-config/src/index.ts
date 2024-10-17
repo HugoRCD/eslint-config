@@ -6,7 +6,6 @@ import defu from 'defu'
 import { ESLintConfigOptions } from './types'
 import nuxt from './languages/nuxt'
 import vue from './languages/vue'
-import tailwindcss from './plugins/tailwind'
 import jsdoc from './plugins/jsdoc'
 import packageJson from './plugins/package'
 import ignores from './plugins/ignores'
@@ -34,9 +33,6 @@ const defaultOptions: ESLintConfigOptions = {
     enabled: true
   },
   nuxt: {
-    enabled: true
-  },
-  tailwind: {
     enabled: true
   },
   typescript: {
@@ -83,9 +79,6 @@ export function createConfig(options: ESLintConfigOptions, ...userConfigs: Resol
 
   if (opts.nuxt)
     config.append(nuxt())
-
-  if (opts.tailwind)
-    config.append(tailwindcss())
 
   if (opts.features?.jsdoc?.enabled)
     config.append(jsdoc(opts.features.jsdoc))

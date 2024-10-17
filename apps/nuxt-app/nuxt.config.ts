@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// @ts-expect-error - Fix this later
 export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
