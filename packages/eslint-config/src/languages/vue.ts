@@ -96,7 +96,7 @@ export default function vue(): Linter.Config[] {
           'error',
           ['script-setup']
         ],
-        'vue/no-ref-object-reactivity-loss': 'warn',
+        'vue/no-ref-object-reactivity-loss': 'off',
         'vue/max-attributes-per-line': ['error', { singleline: { max: 5 } }]
       },
     },
