@@ -41,7 +41,7 @@
     "eslint-flat-config-utils": "^0.4.0",
     "eslint-plugin-import-x": "^4.4.0",
     "eslint-plugin-jsdoc": "^50.4.3",
-    "eslint-plugin-package-json": "^0.15.4",
+    "eslint-plugin-package-json": "^0.15.5",
     "eslint-plugin-tailwindcss": "3.17.5",
     "eslint-plugin-vue": "^9.30.0",
     "jsonc-eslint-parser": "^2.4.0",
