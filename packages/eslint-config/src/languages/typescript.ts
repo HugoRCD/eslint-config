@@ -266,7 +266,7 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Co
             max: 1
           }
         ],
-        '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+        '@typescript-eslint/consistent-type-definitions': 'off',
         'prefer-destructuring': ['error', { array: true, object: true }, { enforceForRenamedProperties: false }],
         'object-curly-spacing': ['error', 'always'],
         '@typescript-eslint/no-duplicate-enum-values': 'error',
