@@ -3,7 +3,7 @@
 import pluginTailwindcss from 'eslint-plugin-tailwindcss'
 import type { Linter } from 'eslint'
 
-export default function tailwindcss(): Linter.FlatConfig[] {
+export default function tailwindcss(): Linter.Config[] {
   return [
     {
       name: 'tailwindcss/rules',

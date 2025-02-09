@@ -1,7 +1,7 @@
 import pluginImport from 'eslint-plugin-import-x'
 import type { Linter } from 'eslint'
 
-export default function imports(): Linter.FlatConfig[] {
+export default function imports(): Linter.Config[] {
   return [
     {
       name: 'nuxt/import/rules',

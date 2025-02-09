@@ -2,7 +2,7 @@ import type { Linter } from 'eslint'
 import packageJson from 'eslint-plugin-package-json/configs/recommended'
 import { PackageJsonConfigOptions } from '../types'
 
-export default function packageJsonPlugin(options?: PackageJsonConfigOptions): Linter.FlatConfig[] {
+export default function packageJsonPlugin(options?: PackageJsonConfigOptions): Linter.Config[] {
   return [
     {
       ...packageJson,
@@ -14,6 +14,6 @@ export default function packageJsonPlugin(options?: PackageJsonConfigOptions): L
         'package-json/valid-package-def': 'error',
         'package-json/valid-version': 'error',
       },
-    },
+    } as Linter.Config,
   ]
 }
