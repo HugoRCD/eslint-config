@@ -3,12 +3,12 @@
   "workspaces": {
     "": {
       "devDependencies": {
-        "@eslint/js": "^9.18.0",
-        "@types/bun": "^1.1.16",
+        "@eslint/js": "^9.20.0",
+        "@types/bun": "^1.2.2",
         "@types/eslint": "^9.6.1",
       },
       "peerDependencies": {
-        "eslint": "^9.18.0",
+        "eslint": "^9.20.1",
       },
     },
     "apps/nuxt-app": {
@@ -21,7 +21,7 @@
     },
     "packages/eslint-config": {
       "name": "@hrcd/eslint-config",
-      "version": "2.1.2-edge",
+      "version": "2.2.1",
       "dependencies": {
         "@eslint/js": "^9.18.0",
         "@nuxt/eslint-plugin": "^0.7.5",
