@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
-    "@types/bun": "^1.2.3",
+    "@types/bun": "^1.2.4",
     "@types/eslint": "^9.6.1"
   },
   "packageManager": "bun@1.0.30",
