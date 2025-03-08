@@ -8,7 +8,7 @@
     "lint:fix": "eslint . --cache --fix"
   },
   "peerDependencies": {
-    "eslint": "^9.21.0"
+    "eslint": "^9.22.0"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "directory": "packages/eslint-config"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
+    "@eslint/js": "^9.22.0",
     "@types/bun": "^1.2.4",
     "@types/eslint": "^9.6.1"
   },
