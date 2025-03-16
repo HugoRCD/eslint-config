@@ -38,14 +38,14 @@
   "dependencies": {
     "@eslint/js": "^9.22.0",
     "@nuxt/eslint-plugin": "^0.7.6",
-    "@rushstack/eslint-patch": "^1.10.5",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
+    "@rushstack/eslint-patch": "^1.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
     "defu": "^6.1.4",
     "eslint-config-flat-gitignore": "^0.3.0",
     "eslint-flat-config-utils": "^0.4.0",
-    "eslint-plugin-import-x": "^4.6.1",
-    "eslint-plugin-jsdoc": "^50.6.3",
+    "eslint-plugin-import-x": "^4.7.2",
+    "eslint-plugin-jsdoc": "^50.6.6",
     "eslint-plugin-package-json": "^0.26.3",
     "eslint-plugin-vue": "^9.33.0",
     "jsonc-eslint-parser": "^2.4.0",
@@ -53,7 +53,7 @@
     "vue-eslint-parser": "^9.4.3"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.4",
+    "@types/bun": "^1.2.5",
     "@types/eslint": "^9.6.1",
     "automd": "^0.4.0",
     "bun-plugin-dts": "^0.3.0",
