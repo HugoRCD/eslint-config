@@ -8,7 +8,7 @@
 
 <!-- /automd -->
 
-This is my personal ESLint configuration, feel free to use it in your projects.
+This is my personal and opinionated ESLint Flat configuration, feel free to use it in your projects.
 
 ## Usage
 
