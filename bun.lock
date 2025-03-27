@@ -21,7 +21,7 @@
     },
     "packages/eslint-config": {
       "name": "@hrcd/eslint-config",
-      "version": "2.2.1",
+      "version": "2.3.0",
       "dependencies": {
         "@eslint/js": "^9.23.0",
         "@nuxt/eslint-plugin": "^0.7.6",

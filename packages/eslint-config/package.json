@@ -1,6 +1,6 @@
 {
   "name": "@hrcd/eslint-config",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "My personal eslint config",
   "repository": {
     "type": "git",
@@ -10,12 +10,8 @@
   "funding": "https://github.com/sponsors/HugoRCD",
   "author": "HugoRCD",
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/index.mjs"
   },
-  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [

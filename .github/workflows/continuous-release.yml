@@ -33,6 +33,9 @@ jobs:
         with:
           bun-version: latest
 
+      - name: 📦 Install dependencies
+        run: bun install
+
       - name: 🛠️ Build
         run: bun run --filter='@hrcd/eslint-config' build
 
