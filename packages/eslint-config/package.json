@@ -30,7 +30,7 @@
     "dev": "unbuild && eslint .",
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix",
-    "release": "bun run build && npm publis",
+    "release": "bun run build && npm publish",
     "release:edge": "bun run build && npm publish --tag edge",
     "typecheck": "tsc --noEmit",
     "test": "bun run build && bun run lint && bun run typecheck"
@@ -64,6 +64,5 @@
   },
   "peerDependencies": {
     "eslint": "^9.23.0"
-  },
-  "packageManager": "bun@1.0.30"
+  }
 }
