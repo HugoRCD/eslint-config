@@ -62,7 +62,7 @@ const defaultOptions: ESLintConfigOptions = {
  * @param {userConfigs} userConfigs - The user configs to append.
  * @returns {FlatConfigComposer<Linter.Config>} - The array of ESLint flat configs.
  */
-export function createConfig(options: ESLintConfigOptions, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.Config> {
+export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.Config> {
   const opts = defu(options, defaultOptions)
 
   const config = composer()
