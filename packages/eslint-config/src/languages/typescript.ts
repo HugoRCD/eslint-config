@@ -228,6 +228,7 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Co
             allowTemplateLiterals: true
           }
         ],
+        'prefer-template': 'error',
         'require-await': 'error',
         'semi': [
           'error',

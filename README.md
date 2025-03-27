@@ -8,7 +8,7 @@
 
 <!-- /automd -->
 
-This is my personal and opinionated ESLint Flat configuration, feel free to use it in your projects.
+This is my personal and opinionated ESLint Flat configuration, feel free to use it in your projects. This config has been made to work specifically with Nuxt, VueJS and TypeScript
 
 ## Usage
 
