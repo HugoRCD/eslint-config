@@ -1,0 +1,43 @@
+name: Publish Any Commit
+on: [ push ]
+
+jobs:
+  check-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      src: ${{ steps.changes.outputs.src }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check if there are changes
+        uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            src:
+              - 'packages/eslint-config/src/**'
+              - 'packages/eslint-config/package.json'
+              - 'bun.lock'
+
+  build:
+    needs: check-changes
+    if: needs.check-changes.outputs.src == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: 📦 Install dependencies
+        run: bun install
+
+      - name: 🛠️ Build
+        run: bun run --filter='@hrcd/eslint-config' build
+
+      - name: 🚀 Continuous Release
+        run: npx pkg-pr-new publish './packages/eslint-config'

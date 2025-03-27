@@ -15,6 +15,9 @@ const { status, error, execute } = await useFetch(`/api/user/session/${props.ses
   immediate: false,
 })
 
+const testingVar = 'Hello'
+const test = 'Test' + testingVar + '123'
+
 const emit = defineEmits(['refresh'])
 async function logoutSession() {
   await execute()
