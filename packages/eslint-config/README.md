@@ -62,7 +62,19 @@ To start contributing, you can follow these steps:
 8. Wait for the maintainers to review your pull request.
 9. Once approved, the pull request will be merged in the next release !
 
-## License
+<!-- automd:fetch url="gh:hugorcd/markdown/main/src/sponsors.md" -->
+
+## Sponsors
+
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg' alt="HugoRCD sponsors" />
+  </a>
+</p>
+
+<!-- /automd -->
+
+## Contributors
 
 <!-- automd:contributors license=Apache author=HugoRCD-->
 
