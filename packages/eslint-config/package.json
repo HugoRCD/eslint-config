@@ -1,6 +1,6 @@
 {
   "name": "@hrcd/eslint-config",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "My personal eslint config",
   "repository": {
     "type": "git",
@@ -35,13 +35,13 @@
     "@eslint/js": "^9.23.0",
     "@nuxt/eslint-plugin": "^0.7.6",
     "@rushstack/eslint-patch": "^1.11.0",
-    "@typescript-eslint/eslint-plugin": "^8.27.0",
-    "@typescript-eslint/parser": "^8.27.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
     "defu": "^6.1.4",
     "eslint-config-flat-gitignore": "^0.3.0",
     "eslint-flat-config-utils": "^0.4.0",
-    "eslint-plugin-import-x": "^4.9.1",
-    "eslint-plugin-jsdoc": "^50.6.8",
+    "eslint-plugin-import-x": "^4.9.3",
+    "eslint-plugin-jsdoc": "^50.6.9",
     "eslint-plugin-package-json": "^0.29.0",
     "eslint-plugin-vue": "^9.33.0",
     "jsonc-eslint-parser": "^2.4.0",
@@ -49,7 +49,7 @@
     "vue-eslint-parser": "^9.4.3"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.5",
+    "@types/bun": "^1.2.8",
     "@types/eslint": "^9.6.1",
     "automd": "^0.4.0",
     "bun-plugin-dts": "^0.3.0",
