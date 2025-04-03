@@ -19,6 +19,7 @@ catalogs:
     '@typescript-eslint/eslint-plugin': ^8.29.0
     '@typescript-eslint/parser': ^8.29.0
     'vue-eslint-parser': ^9.4.3
+    'eslint-plugin-yml': ^1.17.0
     defu: ^6.1.4
     eslint-config-flat-gitignore: ^0.3.0
     eslint-flat-config-utils: ^0.4.0

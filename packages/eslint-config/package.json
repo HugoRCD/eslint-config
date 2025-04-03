@@ -45,6 +45,7 @@
     "eslint-plugin-package-json": "catalog:prod",
     "eslint-plugin-pnpm": "catalog:prod",
     "eslint-plugin-vue": "catalog:prod",
+    "eslint-plugin-yml": "catalog:prod",
     "jsonc-eslint-parser": "catalog:prod",
     "tslib": "catalog:prod",
     "vue-eslint-parser": "catalog:prod",

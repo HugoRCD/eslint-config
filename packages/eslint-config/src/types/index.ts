@@ -75,6 +75,14 @@ export type PnpmConfigOptions = boolean | {
   catalog?: boolean
 }
 
+export type YamlConfigOptions = boolean | {
+  /**
+   * Enable yaml strict mode.
+   * @default false
+   */
+  strict?: boolean
+}
+
 export type ESLintConfigOptions = {
   /**
    * Vue config.
@@ -120,4 +128,10 @@ export type ESLintConfigOptions = {
    * @default []
    */
   ignores?: string[]
+
+  /**
+   * yaml config.
+   * @default false
+   */
+  yaml?: YamlConfigOptions
 }

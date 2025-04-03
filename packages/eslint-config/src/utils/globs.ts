@@ -3,7 +3,7 @@
 export const GLOB_TS = '**/*.?([cm])ts'
 
 export const GLOB_VUE = '**/*.vue'
-// export const GLOB_YAML = '**/*.y?(a)ml'
+export const GLOB_YAML = '**/*.y?(a)ml'
 
 export const GLOB_EXCLUDE = [
   '**/node_modules',
