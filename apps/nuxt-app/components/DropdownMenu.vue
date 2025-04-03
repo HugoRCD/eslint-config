@@ -81,10 +81,10 @@ const items =[
     <UAvatar :src="user.avatar" :alt="user.username" />
 
     <template #account="{ item }">
-      <div class="text-left">
+      <div    class="text-left  ">
         <p>Signed in as</p>
         <p class="truncate font-medium text-gray-900 dark:text-white">
-          {{ item.label }}
+          {{ item.label   }}
         </p>
       </div>
     </template>

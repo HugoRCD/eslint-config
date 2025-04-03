@@ -50,7 +50,7 @@ const defaultOptions: ESLintConfigOptions = {
 
 /**
  * Create an array of ESLint flat configs based on the given options.
- * 
+ *
  * This function merges the provided options with default options and creates
  * a configuration that includes necessary plugins and rules for:
  * - TypeScript
@@ -58,9 +58,9 @@ const defaultOptions: ESLintConfigOptions = {
  * - Nuxt
  * - JSDoc (optional)
  * - Package.json validation
- * 
+ *
  * User configs can be appended as additional arguments.
- * 
+ *
  * @param {ESLintConfigOptions} options - Configuration options for ESLint.
  * @param {...ResolvableFlatConfig} userConfigs - Additional user configs to append.
  * @returns {FlatConfigComposer<Linter.Config>} - The composer containing all configurations.
@@ -78,6 +78,8 @@ export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: 
   // TypeScript config
   if (opts.typescript !== false) {
     const tsOptions = typeof opts.typescript === 'boolean' ? {} : opts.typescript
+    if (opts.vue === false && tsOptions)
+      tsOptions.vue = false
     config.append(typescript(tsOptions))
   }
 
@@ -87,7 +89,7 @@ export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: 
   }
 
   // Nuxt config
-  if (opts.nuxt !== false) {
+  if (opts.nuxt !== false && opts.vue !== false) {
     config.append(nuxt())
   }
 

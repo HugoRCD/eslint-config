@@ -101,6 +101,9 @@ export default function vue(): Linter.Config[] {
           ['script-setup']
         ],
         'vue/no-ref-object-reactivity-loss': 'off',
+        'vue/prop-name-casing': ['error', 'camelCase'],
+        'vue/array-bracket-spacing': ['error', 'never'],
+        'vue/no-useless-v-bind': 'error',
         'vue/max-attributes-per-line': ['error', { singleline: { max: 5 } }]
       },
     },

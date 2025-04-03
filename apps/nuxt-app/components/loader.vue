@@ -10,6 +10,9 @@ console.log("test")
 
 <template>
   <UIcon name="i-lucide-loader" class="animate-spin" :size />
+  <div />
+  <div />
+  <div />
 </template>
 
 <style scoped>
