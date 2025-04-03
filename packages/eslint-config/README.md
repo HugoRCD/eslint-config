@@ -1,4 +1,6 @@
-# eslint-config
+![social-banner.jpg](https://github.com/hugorcd/eslint-config/assets/social-banner.jpg)
+
+# @hrcd/eslint-config
 
 <!-- automd:badges color=black license provider=shields  -->
 
@@ -19,7 +21,7 @@ A comprehensive and opinionated ESLint Flat configuration designed to provide an
 - **📦 PNPM optimized** - Special rules for projects using PNPM workspaces
 - **🚀 PNPM Catalog support** - Integration with the new PNPM Catalog feature for better dependency management
 - **🧹 Style consistency** - Ensures consistent code style with sorted imports and logical formatting
-- **🛠️ Easily customizable** - Opinionated defaults but highly configurable 
+- **🛠️ Easily customizable** - Opinionated defaults but highly configurable
 - **📝 `.gitignore` integration** - Automatically respects your `.gitignore` files
 
 ## 📥 Installation
@@ -67,7 +69,7 @@ export default createConfig({
   typescript: true, // TypeScript support
   vue: true,        // Vue support
   nuxt: true,       // Nuxt support
-  
+
   // Define files to ignore
   ignores: [
     'dist',
