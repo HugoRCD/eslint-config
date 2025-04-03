@@ -18,12 +18,21 @@ catalogs:
     eslint:
       specifier: ^9.23.0
       version: 9.23.0
+    nuxt:
+      specifier: ^3.16.2
+      version: 3.16.2
     typescript:
       specifier: ^5.8.2
       version: 5.8.2
     unbuild:
       specifier: ^3.5.0
       version: 3.5.0
+    vue:
+      specifier: ^3.5.13
+      version: 3.5.13
+    vue-router:
+      specifier: ^4.5.0
+      version: 4.5.0
   prod:
     '@eslint/js':
       specifier: ^9.23.0
@@ -92,13 +101,13 @@ importers:
   apps/nuxt-app:
     dependencies:
       nuxt:
-        specifier: ^3.16.2
+        specifier: catalog:dev
         version: 3.16.2(@parcel/watcher@2.5.1)(@types/node@22.14.0)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.39.0)(terser@5.39.0)(typescript@5.8.2)(vite@6.2.5(@types/node@22.14.0)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
       vue:
-        specifier: ^3.5.13
+        specifier: catalog:dev
         version: 3.5.13(typescript@5.8.2)
       vue-router:
-        specifier: ^4.5.0
+        specifier: catalog:dev
         version: 4.5.0(vue@3.5.13(typescript@5.8.2))
 
   packages/eslint-config:
