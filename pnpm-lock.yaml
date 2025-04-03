@@ -73,6 +73,9 @@ catalogs:
     eslint-plugin-vue:
       specifier: ^9.33.0
       version: 9.33.0
+    eslint-plugin-yml:
+      specifier: ^1.17.0
+      version: 1.17.0
     jsonc-eslint-parser:
       specifier: ^2.4.0
       version: 2.4.0
@@ -151,6 +154,9 @@ importers:
       eslint-plugin-vue:
         specifier: catalog:prod
         version: 9.33.0(eslint@9.23.0(jiti@2.4.2))
+      eslint-plugin-yml:
+        specifier: catalog:prod
+        version: 1.17.0(eslint@9.23.0(jiti@2.4.2))
       jsonc-eslint-parser:
         specifier: catalog:prod
         version: 2.4.0
@@ -1976,6 +1982,12 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
+  eslint-compat-utils@0.6.5:
+    resolution: {integrity: sha512-vAUHYzue4YAa2hNACjB8HvUQj5yehAZgiClyFVVom9cP8z5NSFq3PwB/TtJslN2zAMgRX6FCFCjYBbQh71g5RQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      eslint: '>=6.0.0'
+
   eslint-config-flat-gitignore@0.3.0:
     resolution: {integrity: sha512-0Ndxo4qGhcewjTzw52TK06Mc00aDtHNTdeeW2JfONgDcLkRO/n/BteMRzNVpLQYxdCC/dFEilfM9fjjpGIJ9Og==}
     peerDependencies:
@@ -2026,6 +2038,12 @@ packages:
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+
+  eslint-plugin-yml@1.17.0:
+    resolution: {integrity: sha512-Q3LXFRnNpGYAK/PM0BY1Xs0IY1xTLfM0kC986nNQkx1l8tOGz+YS50N6wXkAJkrBpeUN9OxEMB7QJ+9MTDAqIQ==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=6.0.0'
 
   eslint-scope@7.2.2:
     resolution: {integrity: sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==}
@@ -5702,6 +5720,11 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
+  eslint-compat-utils@0.6.5(eslint@9.23.0(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.23.0(jiti@2.4.2)
+      semver: 7.7.1
+
   eslint-config-flat-gitignore@0.3.0(eslint@9.23.0(jiti@2.4.2)):
     dependencies:
       '@eslint/compat': 1.2.8(eslint@9.23.0(jiti@2.4.2))
@@ -5800,6 +5823,17 @@ snapshots:
       semver: 7.7.1
       vue-eslint-parser: 9.4.3(eslint@9.23.0(jiti@2.4.2))
       xml-name-validator: 4.0.0
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-plugin-yml@1.17.0(eslint@9.23.0(jiti@2.4.2)):
+    dependencies:
+      debug: 4.4.0
+      escape-string-regexp: 4.0.0
+      eslint: 9.23.0(jiti@2.4.2)
+      eslint-compat-utils: 0.6.5(eslint@9.23.0(jiti@2.4.2))
+      natural-compare: 1.4.0
+      yaml-eslint-parser: 1.3.0
     transitivePeerDependencies:
       - supports-color
 
