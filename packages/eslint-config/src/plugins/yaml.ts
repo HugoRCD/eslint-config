@@ -11,6 +11,7 @@ export default function yaml(options: YamlConfigOptions): Linter.Config[] {
     {
       name: 'hrcd/yaml/setup',
       plugins: {
+        // @ts-expect-error this actually work
         yaml: pluginYaml,
       },
     },

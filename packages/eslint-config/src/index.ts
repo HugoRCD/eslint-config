@@ -11,6 +11,7 @@ import packageJson from './plugins/package'
 import ignores from './plugins/ignores'
 import imports from './plugins/import'
 import pnpm from './plugins/pnpm'
+import yaml from './plugins/yaml'
 import typescript from './languages/typescript'
 
 export * from './types/index'
@@ -46,6 +47,7 @@ const defaultOptions: ESLintConfigOptions = {
   jsdoc: false,
   packageJson: false,
   pnpm: false,
+  yaml: true,
 }
 
 /**
@@ -109,6 +111,12 @@ export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: 
   if (opts.pnpm !== false) {
     const pnpmOptions = typeof opts.pnpm === 'boolean' ? {} : opts.pnpm || {}
     config.append(pnpm(pnpmOptions))
+  }
+
+  // Yaml config
+  if (opts.yaml !== false) {
+    const yamlOptions = typeof opts.yaml === 'boolean' ? {} : opts.yaml || {}
+    config.append(yaml(yamlOptions))
   }
 
   if (userConfigs.length > 0) {
