@@ -51,9 +51,9 @@ bun install @hrcd/eslint-config
 Create an `eslint.config.js` file at the root of your project:
 
 ```js
-import hrcd from '@hrcd/eslint-config'
+import { createConfig } from "@hrcd/eslint-config"
 
-export default hrcd()
+export default createConfig()
 ```
 
 ### Customization
