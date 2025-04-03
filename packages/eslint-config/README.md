@@ -1,11 +1,9 @@
-![social-banner.jpg](https://github.com/hugorcd/eslint-config/assets/social-banner.jpg)
+![social-banner.jpg](https://raw.githubusercontent.com/HugoRCD/eslint-config/refs/heads/main/assets/social-banner.jpg)
 
 # @hrcd/eslint-config
 
 <!-- automd:badges color=black license provider=shields  -->
 
-[![npm version](https://img.shields.io/npm/v/@hrcd/eslint-config?color=black)](https://npmjs.com/package/@hrcd/eslint-config)
-[![npm downloads](https://img.shields.io/npm/dm/@hrcd/eslint-config?color=black)](https://npmjs.com/package/@hrcd/eslint-config)
 [![license](https://img.shields.io/github/license/HugoRCD/eslint-config?color=black)](https://github.com/HugoRCD/eslint-config/blob/main/LICENSE)
 
 <!-- /automd -->
@@ -136,7 +134,7 @@ To start contributing, follow these steps:
 ## Sponsors
 
 <p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg">
+  <a href="https://github.com/sponsors/HugoRCD">
     <img src='https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg' alt="HugoRCD sponsors" />
   </a>
 </p>
@@ -160,6 +158,6 @@ Made by [@HugoRCD](https://github.com/HugoRCD) and [community](https://github.co
 
 ---
 
-_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Thu Sep 19 2024)_
+_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Thu Apr 03 2025)_
 
 <!-- /automd -->

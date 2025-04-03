@@ -134,7 +134,7 @@ To start contributing, you can follow these steps:
 ## Sponsors
 
 <p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg">
+  <a href="https://github.com/sponsors/HugoRCD">
     <img src='https://cdn.jsdelivr.net/gh/hugorcd/static/sponsors.svg' alt="HugoRCD sponsors" />
   </a>
 </p>
@@ -158,6 +158,6 @@ Made by [@HugoRCD](https://github.com/HugoRCD) and [community](https://github.co
 
 ---
 
-_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Fri Mar 29 2024)_
+_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Thu Apr 03 2025)_
 
 <!-- /automd -->
