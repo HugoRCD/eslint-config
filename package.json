@@ -16,9 +16,6 @@
     "directory": "packages/eslint-config"
   },
   "devDependencies": {
-    "@hrcd/eslint-config": "workspace:*",
-    "@eslint/js": "^9.23.0",
-    "@types/bun": "^1.2.8",
-    "@types/eslint": "^9.6.1"
+    "@hrcd/eslint-config": "workspace:*"
   }
 }
