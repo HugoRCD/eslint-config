@@ -75,26 +75,6 @@ export type PnpmConfigOptions = boolean | {
   catalog?: boolean
 }
 
-export type FeaturesConfigOptions = {
-  /**
-   * JSDoc config.
-   * @default false
-   */
-  jsdoc?: JSDocConfigOptions
-
-  /**
-   * Package.json config.
-   * @default true
-   */
-  packageJson?: PackageJsonConfigOptions
-
-  /**
-   * pnpm config.
-   * @default false
-   */
-  pnpm?: PnpmConfigOptions
-}
-
 export type ESLintConfigOptions = {
   /**
    * Vue config.
@@ -118,7 +98,20 @@ export type ESLintConfigOptions = {
   typescript?: TypeScriptConfigOptions
 
   /**
-   * Features config.
+   * JSDoc config.
+   * @default false
    */
-  features?: FeaturesConfigOptions
+  jsdoc?: JSDocConfigOptions
+
+  /**
+   * Package.json config.
+   * @default true
+   */
+  packageJson?: PackageJsonConfigOptions
+
+  /**
+   * pnpm config.
+   * @default false
+   */
+  pnpm?: PnpmConfigOptions
 }

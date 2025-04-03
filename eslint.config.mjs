@@ -1,3 +1,8 @@
 import { createConfig } from "@hrcd/eslint-config"
 
-export default createConfig()
+export default createConfig({
+  pnpm: {
+    catalog: true,
+  },
+  packageJson: true,
+})
