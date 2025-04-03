@@ -8,11 +8,20 @@
 
 <!-- /automd -->
 
-This is my personal and opinionated ESLint Flat configuration, feel free to use it in your projects. This config has been made to work specifically with Nuxt, VueJS and TypeScript
+A comprehensive and opinionated ESLint Flat configuration, designed to deliver an optimal development experience with minimal setup.
 
-## Usage
+## ✨ Features
 
-Install package:
+- **Primed for Vue & Nuxt** - Optimized for Vue 3 and the Nuxt ecosystem with tailored rules
+- **Advanced TypeScript Support** - Specific rules for TypeScript with type checking
+- **Multi-language** - Supports JavaScript, TypeScript, Vue, JSON, YAML, Markdown and more
+- **PNPM Optimized** - Special rules for projects using PNPM workspaces
+- **PNPM Catalog Support** - Integration with the new PNPM Catalog feature for better dependency management
+- **Automatic Formatting** - Auto-fix styling issues without relying on Prettier
+- **Highly Customizable** - Opinionated but easily adjustable to your needs
+- **Respects `.gitignore`** - Automatically ignores files listed in your `.gitignore`
+
+## 📦 Installation
 
 <!-- automd:pm-install -->
 
@@ -35,9 +44,67 @@ bun install @hrcd/eslint-config
 
 <!-- /automd -->
 
-## Development
+## 🚀 Usage
 
-### Local development
+Create an `eslint.config.js` file at the root of your project:
+
+```js
+import hrcd from '@hrcd/eslint-config'
+
+export default hrcd()
+```
+
+### Customization
+
+The configuration is opinionated but flexible. You can customize it to match your project's needs:
+
+```js
+import { createConfig } from "@hrcd/eslint-config"
+
+export default createConfig({  
+  // Enable/disable features
+  typescript: true, // TypeScript support
+  vue: true,        // Vue support
+  nuxt: true,       // Nuxt support
+  
+  // Define files to ignore
+  ignores: [
+    'dist',
+    'node_modules',
+    // Other patterns
+  ]
+})
+```
+
+## 🔍 PNPM Catalog Support
+
+This ESLint config includes optimized rules for projects using PNPM Catalog, the new feature that helps manage and organize packages in PNPM workspaces. It ensures proper dependency declarations, prevents hoisting issues, and maintains catalog structure consistency.
+
+## 🛠️ IDE Integration
+
+### VS Code
+
+1. Install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+2. Add to your `settings.json`:
+
+```json
+{
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "yaml"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
+
+## 🛠️ Development
 
 - Clone this repository
 - Install latest LTS version of [Node.js](https://nodejs.org/en/)

@@ -114,4 +114,10 @@ export type ESLintConfigOptions = {
    * @default false
    */
   pnpm?: PnpmConfigOptions
+
+  /**
+   * Ignores config.
+   * @default []
+   */
+  ignores?: string[]
 }
