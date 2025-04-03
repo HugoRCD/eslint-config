@@ -3,6 +3,10 @@
 import pluginTailwindcss from 'eslint-plugin-tailwindcss'
 import type { Linter } from 'eslint'
 
+/**
+ * Tailwind CSS configuration for ESLint.
+ * @returns {Linter.Config[]} - Array of ESLint configurations.
+ */
 export default function tailwindcss(): Linter.Config[] {
   return [
     {

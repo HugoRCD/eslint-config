@@ -3,7 +3,15 @@ import pluginTs from '@typescript-eslint/eslint-plugin'
 import type { Linter } from 'eslint'
 import { TypeScriptConfigOptions } from '../types'
 
+/**
+ * TypeScript configuration for ESLint.
+ * @param {TypeScriptConfigOptions} options - Configuration options for TypeScript.
+ * @returns {Linter.Config[]} - Array of ESLint configurations.
+ */
 export default function typescript(options?: TypeScriptConfigOptions): Linter.Config[] {
+  // If options is a boolean, use an empty object
+  const opts = typeof options === 'boolean' ? {} : options || {}
+
   return [
     {
       name: 'typescript/setup',
@@ -13,15 +21,15 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Co
     },
     {
       name: 'typescript/rules',
-      files: ['**/*.ts', options?.vue ? '**/*.vue' : ''],
+      files: ['**/*.ts', opts.vue ? '**/*.vue' : ''],
       languageOptions: {
         parser: parserTs,
       },
       rules: {
         ...pluginTs.configs.recommended.rules,
-        '@typescript-eslint/explicit-function-return-type': options?.strict ? 'error' : 'off',
-        '@typescript-eslint/no-explicit-any': options?.any ? 'off' : options?.strict ? 'error' : 'off',
-        'no-console': options?.consoleLog ? 'off' : 'warn',
+        '@typescript-eslint/explicit-function-return-type': opts.strict ? 'error' : 'off',
+        '@typescript-eslint/no-explicit-any': opts.any ? 'off' : opts.strict ? 'error' : 'off',
+        'no-console': opts.consoleLog ? 'off' : 'warn',
         'no-undef': 'off',
         'func-name-matching': 'error',
         'no-empty-function': 'off',
@@ -76,7 +84,7 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Co
           }
         ],
         '@typescript-eslint/naming-convention': [
-          options?.caseCheck ? 'error' : 'off',
+          opts.caseCheck ? 'error' : 'off',
           {
             'selector': 'variableLike',
             'format': ['camelCase', 'UPPER_CASE'],

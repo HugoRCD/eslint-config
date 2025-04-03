@@ -1,20 +1,8 @@
-export type VueConfigOptions = {
-  /**
-   * Enable Vue support.
-   * @default true
-   */
-  enabled?: boolean
-}
+export type VueConfigOptions = boolean | Record<string, never>
 
-export type NuxtConfigOptions = {
-  /**
-   * Enable Nuxt support.
-   * @default true
-   */
-  enabled?: boolean
-}
+export type NuxtConfigOptions = boolean | Record<string, never>
 
-export type TypeScriptConfigOptions = {
+export type TypeScriptConfigOptions = boolean | {
   /**
    * Enable TypeScript support.
    * @default true
@@ -52,7 +40,7 @@ export type TypeScriptConfigOptions = {
   caseCheck?: boolean
 }
 
-export type JSDocConfigOptions = {
+export type JSDocConfigOptions = boolean | {
   /**
    * Enable JSDoc support.
    * @default true
@@ -66,7 +54,7 @@ export type JSDocConfigOptions = {
   strict?: boolean
 }
 
-export type PackageJsonConfigOptions = {
+export type PackageJsonConfigOptions = boolean | {
   /**
    * Enable package.json support.
    * @default true
@@ -82,11 +70,13 @@ export type PackageJsonConfigOptions = {
 export type FeaturesConfigOptions = {
   /**
    * JSDoc config.
+   * @default false
    */
   jsdoc?: JSDocConfigOptions
 
   /**
    * Package.json config.
+   * @default true
    */
   packageJson?: PackageJsonConfigOptions
 }
@@ -94,16 +84,22 @@ export type FeaturesConfigOptions = {
 export type ESLintConfigOptions = {
   /**
    * Vue config.
+   * Set false to disable, true to enable with default options, or provide custom options.
+   * @default true
    */
   vue?: VueConfigOptions
 
   /**
    * Nuxt config.
+   * Set false to disable, true to enable with default options, or provide custom options.
+   * @default true
    */
   nuxt?: NuxtConfigOptions
 
   /**
    * TypeScript config.
+   * Set false to disable, true to enable with default options, or provide custom options.
+   * @default true
    */
   typescript?: TypeScriptConfigOptions
 
