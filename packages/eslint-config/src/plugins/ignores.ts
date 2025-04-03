@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint'
+import { GLOB_EXCLUDE } from '../utils/globs'
 
 /**
  * Ignores configuration for ESLint.
@@ -11,11 +12,7 @@ export default function ignores(options: {
     {
       ignores: [
         ...(options.ignores || []),
-        '**/dist',
-        '**/node_modules',
-        '**/.nuxt',
-        '**/.output',
-        '**/.vercel',
+        ...GLOB_EXCLUDE,
       ],
     },
   ]
