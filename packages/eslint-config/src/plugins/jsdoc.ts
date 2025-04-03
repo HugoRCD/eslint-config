@@ -2,7 +2,15 @@ import type { Linter } from 'eslint'
 import jsdocPlugin from 'eslint-plugin-jsdoc'
 import { JSDocConfigOptions } from '../types'
 
+/**
+ * JSDoc configuration for ESLint.
+ * @param {JSDocConfigOptions} options - Configuration options for JSDoc.
+ * @returns {Linter.Config[]} - Array of ESLint configurations.
+ */
 export default function jsdoc(options?: JSDocConfigOptions): Linter.Config[] {
+  // If options is a boolean, use an empty object
+  const opts = typeof options === 'boolean' ? {} : options || {}
+
   return [
     {
       name: 'tooling/jsdoc',
@@ -11,7 +19,7 @@ export default function jsdoc(options?: JSDocConfigOptions): Linter.Config[] {
       },
       rules: {
         'jsdoc/require-jsdoc': [
-          options?.strict ? 'error' : 'off',
+          opts.strict ? 'error' : 'off',
           {
             require: {
               FunctionDeclaration: true,

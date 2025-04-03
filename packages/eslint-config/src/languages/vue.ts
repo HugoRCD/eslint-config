@@ -3,6 +3,10 @@ import parserTs from '@typescript-eslint/parser'
 import * as parserVue from 'vue-eslint-parser'
 import type { Linter } from 'eslint'
 
+/**
+ * Vue configuration for ESLint.
+ * @returns {Linter.Config[]} - Array of ESLint configurations.
+ */
 export default function vue(): Linter.Config[] {
   return [
     {

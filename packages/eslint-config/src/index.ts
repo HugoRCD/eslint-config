@@ -17,10 +17,10 @@ export * from './types/index'
 /**
  * Provide type definitions for constructing ESLint flat config items.
  *
- * This function takes flat config item, or an array of them as rest arguments.
- * It also automatically resolves the promise if the config item is a promise.
+ * This function takes flat config items as rest arguments and resolves them.
+ * It automatically resolves promises if any config item is a promise.
  * @param {...ResolvableFlatConfig} configs - The flat config items to resolve.
- * @returns {FlatConfigComposer<Linter.Config>} - The array of resolved flat config items.
+ * @returns {FlatConfigComposer<Linter.Config>} - The composer containing resolved flat config items.
  */
 export function defineFlatConfigs(
   ...configs: ResolvableFlatConfig[]
@@ -28,15 +28,14 @@ export function defineFlatConfigs(
   return composer(...configs)
 }
 
+/**
+ * Default configuration options for ESLint.
+ * These options can be overridden by the user.
+ */
 const defaultOptions: ESLintConfigOptions = {
-  vue: {
-    enabled: true
-  },
-  nuxt: {
-    enabled: true
-  },
+  vue: true,
+  nuxt: true,
   typescript: {
-    enabled: true,
     vue: true,
     strict: false,
     any: false,
@@ -44,23 +43,27 @@ const defaultOptions: ESLintConfigOptions = {
     caseCheck: true
   },
   features: {
-    jsdoc: {
-      enabled: false,
-      strict: false
-    },
-    packageJson: {
-      enabled: true,
-      strict: false
-    }
+    jsdoc: false,
+    packageJson: true
   },
 }
 
 /**
- * Create an array of ESLint flat configs, based on the given options.
- * Accepts appending user configs as rest arguments from the second argument.
- * @param {options} options - The ESLint options.
- * @param {userConfigs} userConfigs - The user configs to append.
- * @returns {FlatConfigComposer<Linter.Config>} - The array of ESLint flat configs.
+ * Create an array of ESLint flat configs based on the given options.
+ * 
+ * This function merges the provided options with default options and creates
+ * a configuration that includes necessary plugins and rules for:
+ * - TypeScript
+ * - Vue
+ * - Nuxt
+ * - JSDoc (optional)
+ * - Package.json validation
+ * 
+ * User configs can be appended as additional arguments.
+ * 
+ * @param {ESLintConfigOptions} options - Configuration options for ESLint.
+ * @param {...ResolvableFlatConfig} userConfigs - Additional user configs to append.
+ * @returns {FlatConfigComposer<Linter.Config>} - The composer containing all configurations.
  */
 export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: ResolvableFlatConfig[]): FlatConfigComposer<Linter.Config> {
   const opts = defu(options, defaultOptions)
@@ -72,19 +75,33 @@ export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: 
   config.append(ignores())
   config.append(imports())
 
-  config.append(typescript(opts.typescript))
+  // TypeScript config
+  if (opts.typescript !== false) {
+    const tsOptions = typeof opts.typescript === 'boolean' ? {} : opts.typescript
+    config.append(typescript(tsOptions))
+  }
 
-  if (opts.vue)
+  // Vue config
+  if (opts.vue !== false) {
     config.append(vue())
+  }
 
-  if (opts.nuxt)
+  // Nuxt config
+  if (opts.nuxt !== false) {
     config.append(nuxt())
+  }
 
-  if (opts.features?.jsdoc?.enabled)
-    config.append(jsdoc(opts.features.jsdoc))
+  // JSDoc config
+  if (opts.features && opts.features.jsdoc !== false) {
+    const jsdocOptions = typeof opts.features.jsdoc === 'boolean' ? {} : opts.features.jsdoc || {}
+    config.append(jsdoc(jsdocOptions))
+  }
 
-  if (opts.features?.packageJson?.enabled)
-    config.append(packageJson(opts.features.packageJson))
+  // Package.json config
+  if (opts.features && opts.features.packageJson !== false) {
+    const packageJsonOptions = typeof opts.features.packageJson === 'boolean' ? {} : opts.features.packageJson || {}
+    config.append(packageJson(packageJsonOptions))
+  }
 
   if (userConfigs.length > 0) {
     config.append(...userConfigs)

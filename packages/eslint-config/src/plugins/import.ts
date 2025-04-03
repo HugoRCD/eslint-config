@@ -1,6 +1,10 @@
 import pluginImport from 'eslint-plugin-import-x'
 import type { Linter } from 'eslint'
 
+/**
+ * Import configuration for ESLint.
+ * @returns {Linter.Config[]} - Array of ESLint configurations.
+ */
 export default function imports(): Linter.Config[] {
   return [
     {
