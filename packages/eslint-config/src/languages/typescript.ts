@@ -2,6 +2,7 @@ import parserTs from '@typescript-eslint/parser'
 import pluginTs from '@typescript-eslint/eslint-plugin'
 import type { Linter } from 'eslint'
 import { TypeScriptConfigOptions } from '../types'
+import { GLOB_TS, GLOB_VUE } from '../utils/globs'
 
 /**
  * TypeScript configuration for ESLint.
@@ -21,7 +22,7 @@ export default function typescript(options?: TypeScriptConfigOptions): Linter.Co
     },
     {
       name: 'typescript/rules',
-      files: ['**/*.ts', opts.vue ? '**/*.vue' : ''],
+      files: [GLOB_TS, opts.vue ? GLOB_VUE : ''],
       languageOptions: {
         parser: parserTs,
       },

@@ -18,7 +18,7 @@ jobs:
             src:
               - 'packages/eslint-config/src/**'
               - 'packages/eslint-config/package.json'
-              - 'bun.lock'
+              - 'pnpm-lock.yaml'
 
   build:
     needs: check-changes
@@ -28,16 +28,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
 
       - name: 📦 Install dependencies
-        run: bun install
+        run: pnpm install
 
       - name: 🛠️ Build
-        run: bun run --filter='@hrcd/eslint-config' build
+        run: pnpm run --filter='@hrcd/eslint-config' build
 
       - name: 🚀 Continuous Release
         run: npx pkg-pr-new publish './packages/eslint-config'

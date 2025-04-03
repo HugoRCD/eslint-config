@@ -72,7 +72,7 @@ export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: 
 
   config.append(gitignore({ strict: false }))
 
-  config.append(ignores())
+  config.append(ignores({ ignores: opts.ignores }))
   config.append(imports())
 
   // TypeScript config
