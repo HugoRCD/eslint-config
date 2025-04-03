@@ -67,18 +67,12 @@ export type PackageJsonConfigOptions = boolean | {
   strict?: boolean
 }
 
-export type FeaturesConfigOptions = {
+export type PnpmConfigOptions = boolean | {
   /**
-   * JSDoc config.
+   * Enable pnpm catalog support.
    * @default false
    */
-  jsdoc?: JSDocConfigOptions
-
-  /**
-   * Package.json config.
-   * @default true
-   */
-  packageJson?: PackageJsonConfigOptions
+  catalog?: boolean
 }
 
 export type ESLintConfigOptions = {
@@ -104,7 +98,20 @@ export type ESLintConfigOptions = {
   typescript?: TypeScriptConfigOptions
 
   /**
-   * Features config.
+   * JSDoc config.
+   * @default false
    */
-  features?: FeaturesConfigOptions
+  jsdoc?: JSDocConfigOptions
+
+  /**
+   * Package.json config.
+   * @default true
+   */
+  packageJson?: PackageJsonConfigOptions
+
+  /**
+   * pnpm config.
+   * @default false
+   */
+  pnpm?: PnpmConfigOptions
 }

@@ -10,6 +10,7 @@ import jsdoc from './plugins/jsdoc'
 import packageJson from './plugins/package'
 import ignores from './plugins/ignores'
 import imports from './plugins/import'
+import pnpm from './plugins/pnpm'
 import typescript from './languages/typescript'
 
 export * from './types/index'
@@ -42,10 +43,9 @@ const defaultOptions: ESLintConfigOptions = {
     consoleLog: true,
     caseCheck: true
   },
-  features: {
-    jsdoc: false,
-    packageJson: true
-  },
+  jsdoc: false,
+  packageJson: false,
+  pnpm: false,
 }
 
 /**
@@ -94,15 +94,21 @@ export function createConfig(options: ESLintConfigOptions = {}, ...userConfigs: 
   }
 
   // JSDoc config
-  if (opts.features && opts.features.jsdoc !== false) {
-    const jsdocOptions = typeof opts.features.jsdoc === 'boolean' ? {} : opts.features.jsdoc || {}
+  if (opts.jsdoc !== false) {
+    const jsdocOptions = typeof opts.jsdoc === 'boolean' ? {} : opts.jsdoc || {}
     config.append(jsdoc(jsdocOptions))
   }
 
   // Package.json config
-  if (opts.features && opts.features.packageJson !== false) {
-    const packageJsonOptions = typeof opts.features.packageJson === 'boolean' ? {} : opts.features.packageJson || {}
+  if (opts.packageJson !== false) {
+    const packageJsonOptions = typeof opts.packageJson === 'boolean' ? {} : opts.packageJson || {}
     config.append(packageJson(packageJsonOptions))
+  }
+
+  // Pnpm config
+  if (opts.pnpm !== false) {
+    const pnpmOptions = typeof opts.pnpm === 'boolean' ? {} : opts.pnpm || {}
+    config.append(pnpm(pnpmOptions))
   }
 
   if (userConfigs.length > 0) {
