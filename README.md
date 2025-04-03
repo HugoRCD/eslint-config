@@ -1,4 +1,6 @@
-# eslint-config
+![social-banner.jpg](assets/social-banner.jpg)
+
+# @hrcd/eslint-config
 
 <!-- automd:badges color=black license provider=shields  -->
 
@@ -61,12 +63,12 @@ The configuration is opinionated but flexible. You can customize it to match you
 ```js
 import { createConfig } from "@hrcd/eslint-config"
 
-export default createConfig({  
+export default createConfig({
   // Enable/disable features
   typescript: true, // TypeScript support
   vue: true,        // Vue support
   nuxt: true,       // Nuxt support
-  
+
   // Define files to ignore
   ignores: [
     'dist',
