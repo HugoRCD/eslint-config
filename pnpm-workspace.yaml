@@ -11,7 +11,7 @@ catalogs:
     typescript: ^5.8.3
     unbuild: ^3.5.0
     vue: ^3.5.13
-    vue-router: ^4.5.0
+    vue-router: ^4.5.1
   prod:
     '@eslint/js': ^9.25.1
     '@nuxt/eslint-plugin': ^0.7.6
@@ -21,8 +21,8 @@ catalogs:
     defu: ^6.1.4
     eslint-config-flat-gitignore: ^0.3.0
     eslint-flat-config-utils: ^0.4.0
-    eslint-plugin-import-x: ^4.10.6
-    eslint-plugin-jsdoc: ^50.6.10
+    eslint-plugin-import-x: ^4.11.0
+    eslint-plugin-jsdoc: ^50.6.11
     eslint-plugin-package-json: ^0.30.0
     eslint-plugin-pnpm: ^0.3.1
     eslint-plugin-vue: ^9.33.0
