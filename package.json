@@ -9,7 +9,7 @@
   },
   "packageManager": "pnpm@10.10.0",
   "peerDependencies": {
-    "eslint": "^9.25.1"
+    "eslint": "^9.26.0"
   },
   "repository": {
     "type": "git",
