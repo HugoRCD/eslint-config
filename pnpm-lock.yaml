@@ -65,8 +65,8 @@ catalogs:
       specifier: ^50.8.0
       version: 50.8.0
     eslint-plugin-package-json:
-      specifier: ^0.43.2
-      version: 0.43.2
+      specifier: ^0.43.3
+      version: 0.43.3
     eslint-plugin-pnpm:
       specifier: ^0.3.1
       version: 0.3.1
@@ -147,7 +147,7 @@ importers:
         version: 50.8.0(eslint@9.30.1(jiti@2.4.2))
       eslint-plugin-package-json:
         specifier: catalog:prod
-        version: 0.43.2(@types/estree@1.0.8)(eslint@9.30.1(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)
+        version: 0.43.3(@types/estree@1.0.8)(eslint@9.30.1(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)
       eslint-plugin-pnpm:
         specifier: catalog:prod
         version: 0.3.1(eslint@9.30.1(jiti@2.4.2))
@@ -191,8 +191,8 @@ importers:
 
 packages:
 
-  '@altano/repository-tools@1.0.1':
-    resolution: {integrity: sha512-/FFHQOMp5TZWplkDWbbLIjmANDr9H/FtqUm+hfJMK76OBut0Ht0cNfd0ZXd/6LXf4pWUTzvpgVjcin7EEHSznA==}
+  '@altano/repository-tools@2.0.1':
+    resolution: {integrity: sha512-YE/52CkFtb+YtHPgbWPai7oo5N9AKnMuP5LM+i2AG7G1H2jdYBCO1iDnkDE3dZ3C1MIgckaF+d5PNRulgt0bdw==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -2775,8 +2775,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
 
-  eslint-plugin-package-json@0.43.2:
-    resolution: {integrity: sha512-TU7g9vxUo6m3OBChi9j37orUIgdpZem7nIPXI/XDa58XjuGIpNnjtFn24E9m/dfE/dowofrPaOZoY3PDjPMbeA==}
+  eslint-plugin-package-json@0.43.3:
+    resolution: {integrity: sha512-vzTC0npt+93P2xbp4wQC3qJSU6N8Li97F0/ZvzcRCNnbvA30PXUcPUq7OhzEQ4qR50rZwQQQcp51yPuQRJiktQ==}
     engines: {node: ^=20.19.0 || >=22.12.0}
     peerDependencies:
       eslint: '>=8.0.0'
@@ -5223,7 +5223,7 @@ packages:
 
 snapshots:
 
-  '@altano/repository-tools@1.0.1': {}
+  '@altano/repository-tools@2.0.1': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:
@@ -7921,9 +7921,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-package-json@0.43.2(@types/estree@1.0.8)(eslint@9.30.1(jiti@2.4.2))(jsonc-eslint-parser@2.4.0):
+  eslint-plugin-package-json@0.43.3(@types/estree@1.0.8)(eslint@9.30.1(jiti@2.4.2))(jsonc-eslint-parser@2.4.0):
     dependencies:
-      '@altano/repository-tools': 1.0.1
+      '@altano/repository-tools': 2.0.1
       change-case: 5.4.4
       detect-indent: 7.0.1
       detect-newline: 4.0.1
