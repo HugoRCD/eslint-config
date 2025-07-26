@@ -6,14 +6,14 @@ catalogs:
     '@types/eslint': ^9.6.1
     automd: ^0.4.0
     changelogen: ^0.6.2
-    eslint: ^9.31.0
+    eslint: ^9.32.0
     nuxt: ^3.17.7
     typescript: ^5.8.3
     unbuild: ^3.6.0
     vue: ^3.5.18
     vue-router: ^4.5.1
   prod:
-    '@eslint/js': ^9.31.0
+    '@eslint/js': ^9.32.0
     '@nuxt/eslint-plugin': ^0.7.6
     '@rushstack/eslint-patch': ^1.12.0
     '@typescript-eslint/eslint-plugin': ^8.38.0
@@ -23,7 +23,7 @@ catalogs:
     eslint-flat-config-utils: ^0.4.0
     eslint-plugin-import-x: ^4.16.1
     eslint-plugin-jsdoc: ^50.8.0
-    eslint-plugin-package-json: ^0.46.0
+    eslint-plugin-package-json: ^0.47.0
     eslint-plugin-pnpm: ^0.3.1
     eslint-plugin-vue: ^9.33.0
     eslint-plugin-yml: ^1.18.0
