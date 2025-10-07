@@ -7,9 +7,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --cache --fix"
   },
-  "packageManager": "pnpm@10.18.0",
+  "packageManager": "pnpm@10.18.1",
   "peerDependencies": {
-    "eslint": "^9.36.0"
+    "eslint": "^9.37.0"
   },
   "repository": {
     "type": "git",
