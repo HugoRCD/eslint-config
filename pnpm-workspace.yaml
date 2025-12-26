@@ -16,8 +16,8 @@ catalogs:
     '@eslint/js': ^9.39.2
     '@nuxt/eslint-plugin': ^0.7.6
     '@rushstack/eslint-patch': ^1.15.0
-    '@typescript-eslint/eslint-plugin': ^8.50.0
-    '@typescript-eslint/parser': ^8.50.0
+    '@typescript-eslint/eslint-plugin': ^8.50.1
+    '@typescript-eslint/parser': ^8.50.1
     defu: ^6.1.4
     eslint-config-flat-gitignore: ^0.3.0
     eslint-flat-config-utils: ^0.4.0
