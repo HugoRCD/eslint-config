@@ -62,5 +62,5 @@
   "peerDependencies": {
     "eslint": "catalog:dev"
   },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@10.34.6"
 }
